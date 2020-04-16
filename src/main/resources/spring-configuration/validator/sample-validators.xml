@@ -8,13 +8,6 @@
           c:group="org.bardframework.crud.sample.sample.SampleDto">
         <constructor-arg name="validators">
             <util:map>
-                <entry key="username">
-                    <list>
-                        <ref bean="textNotEmptyValidator"/>
-                        <bean class="org.bardframework.validator.field.common.TextLengthValidator" c:min="1"
-                              c:max="50"/>
-                    </list>
-                </entry>
                 <entry key="email">
                     <list>
                         <ref bean="textNotEmptyValidator"/>

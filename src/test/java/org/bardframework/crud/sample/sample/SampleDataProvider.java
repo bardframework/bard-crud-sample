@@ -9,7 +9,6 @@ public class SampleDataProvider {
     public SampleDto getDtoValid() {
         SampleDto request = new SampleDto();
         request.setEmail(this.getEmailValid());
-        request.setUsername(this.getUsernameValid());
         request.setDisplayName(this.getNameValid());
         request.setDescription(this.getDescriptionValid());
         return request;

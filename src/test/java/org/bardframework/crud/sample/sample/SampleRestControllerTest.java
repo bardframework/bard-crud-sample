@@ -34,7 +34,7 @@ class SampleRestControllerTest extends BaseTestControllerAbstract {
     @Test
     void createWithInvalidUsername() {
         SampleDto dto = dataProvider.getDtoValid();
-        dto.setUsername(RandomUtils.nextBoolean() ? RandomStringUtils.randomAlphabetic(200, 300) : null);
+        dto.setDisplayName(RandomUtils.nextBoolean() ? RandomStringUtils.randomAlphabetic(200, 300) : null);
         ResponseEntity<String> response = super.post(CREATE_URL, dto, String.class, HttpStatus.NOT_ACCEPTABLE);
         Assertions.assertEquals(HttpStatus.NOT_ACCEPTABLE, response.getStatusCode());
     }

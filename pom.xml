@@ -32,6 +32,14 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
         </dependency>
@@ -69,6 +77,10 @@
                     <groupId>javax.validation</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -155,11 +167,61 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <files>
+                                <file>src/main/resources/develop-configuration/database-config.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-maven-plugin</artifactId>
+                <version>${querydsl.version}</version>
                 <configuration>
-                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <skip>false</skip>
+                    <jdbcDriver>${database.driver_class_name}</jdbcDriver>
+                    <jdbcUrl>${database.url}</jdbcUrl>
+                    <jdbcUser>${database.username}</jdbcUser>
+                    <jdbcPassword>${database.password}</jdbcPassword>
+                    <packageName>org.bardframework.crud.sample.common.entity</packageName>
+                    <targetFolder>${project.basedir}/src/main/java/</targetFolder>
+                    <sourceFolder/>
+                    <customTypes>
+                        <customType>com.querydsl.sql.types.JSR310LocalDateTimeType</customType>
+                    </customTypes>
+                    <typeMappings/>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>jakarta.annotation</groupId>
+                        <artifactId>jakarta.annotation-api</artifactId>
+                        <version>${jakarta-annotation.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mariadb.jdbc</groupId>
+                        <artifactId>mariadb-java-client</artifactId>
+                        <version>${mariadb.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>export</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

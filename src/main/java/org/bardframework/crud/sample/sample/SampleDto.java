@@ -1,7 +1,6 @@
 package org.bardframework.crud.sample.sample;
 
 public class SampleDto {
-    private String username;
     private String email;
     private String displayName;
     private String description;
@@ -12,14 +11,6 @@ public class SampleDto {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getUsername() {
-        return this.username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getDisplayName() {
