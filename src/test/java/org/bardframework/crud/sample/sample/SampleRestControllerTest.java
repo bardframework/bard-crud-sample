@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.sample;
 
-import org.bardframework.crud.sample.BaseTestControllerAbstract;
 import org.bardframework.commons.utils.RandomStringUtils;
 import org.bardframework.commons.utils.RandomUtils;
+import org.bardframework.crud.sample.BaseTestControllerAbstract;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +27,6 @@ class SampleRestControllerTest extends BaseTestControllerAbstract {
     void createWithInvalidEmail() {
         SampleDto dto = dataProvider.getDtoValid();
         dto.setEmail(RandomUtils.nextBoolean() ? RandomStringUtils.randomAlphabetic(200, 300) : null);
-        ResponseEntity<String> response = super.post(CREATE_URL, dto, String.class, HttpStatus.NOT_ACCEPTABLE);
-        Assertions.assertEquals(HttpStatus.NOT_ACCEPTABLE, response.getStatusCode());
-    }
-
-    @Test
-    void createWithInvalidUsername() {
-        SampleDto dto = dataProvider.getDtoValid();
-        dto.setDisplayName(RandomUtils.nextBoolean() ? RandomStringUtils.randomAlphabetic(200, 300) : null);
         ResponseEntity<String> response = super.post(CREATE_URL, dto, String.class, HttpStatus.NOT_ACCEPTABLE);
         Assertions.assertEquals(HttpStatus.NOT_ACCEPTABLE, response.getStatusCode());
     }

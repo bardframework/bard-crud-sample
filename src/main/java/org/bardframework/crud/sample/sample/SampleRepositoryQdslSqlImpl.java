@@ -5,8 +5,9 @@ import com.querydsl.core.types.QBean;
 import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
-import org.bardframework.base.crud.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.base.utils.QueryDslUtils;
+import org.bardframework.crud.sample.common.CrudSampleBaseRepositoryQdslSqlAbstract;
+import org.bardframework.crud.sample.common.CrudSampleUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -14,7 +15,7 @@ import java.util.UUID;
 import static org.bardframework.crud.sample.common.entity.QTbSample.tbSample;
 
 @Repository
-public class SampleRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<SampleModel, SampleCriteria, String, String> {
+public class SampleRepositoryQdslSqlImpl extends CrudSampleBaseRepositoryQdslSqlAbstract<SampleModel, SampleCriteria> {
 
     private static final QBean<SampleModel> Q_BEAN = QueryDslUtils.bean(SampleModel.class,
             tbSample.id,
@@ -24,7 +25,7 @@ public class SampleRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<S
     );
 
     @Override
-    protected <T> SQLQuery<T> setCriteria(SampleCriteria criteria, SQLQuery<T> query, String user) {
+    protected <T> SQLQuery<T> setCriteria(SampleCriteria criteria, SQLQuery<T> query, CrudSampleUser user) {
         if (null != criteria.getSearchQuery()) {
             query.where(tbSample.displayName.like('%' + criteria.getSearchQuery() + '%'));
         }
@@ -42,7 +43,7 @@ public class SampleRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<S
     }
 
     @Override
-    protected <C extends StoreClause<C>> C toClause(C clause, SampleModel model, String user) {
+    protected <C extends StoreClause<C>> C toClause(C clause, SampleModel model, CrudSampleUser user) {
         clause.set(tbSample.email, model.getEmail());
         clause.set(tbSample.displayName, model.getDisplayName());
         clause.set(tbSample.description, model.getDescription());
@@ -50,7 +51,7 @@ public class SampleRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<S
     }
 
     @Override
-    protected SampleModel setIdentifier(SampleModel model, String user) {
+    protected SampleModel setIdentifier(SampleModel model, CrudSampleUser user) {
         model.setId(UUID.randomUUID().toString());
         return model;
     }

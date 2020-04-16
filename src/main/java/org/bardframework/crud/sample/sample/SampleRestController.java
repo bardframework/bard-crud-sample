@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.sample;
 
-import org.bardframework.crud.sample.common.entity.CrudSampleBaseCrudRestControllerAbstract;
+import org.bardframework.crud.sample.common.CrudSampleBaseCrudRestControllerAbstract;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

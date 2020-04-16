@@ -1,5 +1,5 @@
-CREATE DATABASE `crud_sample` CHAR SET utf8 COLLATE utf8_bin;
-CREATE TABLE `crud_sample`.`tb_sample`
+CREATE DATABASE `crud-sample` CHAR SET utf8 COLLATE utf8_bin;
+CREATE TABLE `crud-sample`.`tb_sample`
 (
     `id`           char(50)  NOT NULL,
     `email`        char(100) NOT NULL,

@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.sample;
 
-import org.bardframework.base.crud.BaseCriteriaAbstract;
+import org.bardframework.crud.sample.common.CrudSampleBaseCriteriaAbstract;
 
-public class SampleCriteria extends BaseCriteriaAbstract<String> {
+public class SampleCriteria extends CrudSampleBaseCriteriaAbstract {
 
     private String searchQuery;
 

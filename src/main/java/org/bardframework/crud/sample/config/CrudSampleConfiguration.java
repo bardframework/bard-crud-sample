@@ -3,7 +3,6 @@ package org.bardframework.crud.sample.config;
 import org.bardframework.commons.config.Configurator;
 import org.bardframework.commons.utils.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;

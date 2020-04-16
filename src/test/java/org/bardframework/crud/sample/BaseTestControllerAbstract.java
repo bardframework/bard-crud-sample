@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -17,7 +20,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @Import(Application.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource("classpath:test.properties")
-@ContextConfiguration(locations = "classpath*:test-configuration.xml")
+@ContextConfiguration(locations = {"classpath:develop-configuration/**/**.xml", "classpath*:test-configuration.xml"})
 public abstract class BaseTestControllerAbstract {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseTestControllerAbstract.class);

@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.sample;
 
-import org.bardframework.base.crud.BaseModelAbstract;
+import org.bardframework.crud.sample.common.CrudSampleBaseModelAbstract;
 
-public class SampleModel extends BaseModelAbstract<String> {
+public class SampleModel extends CrudSampleBaseModelAbstract {
     private String email;
     private String displayName;
     private String description;
