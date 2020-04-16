@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean class="org.bardframework.validator.holder.FieldValidatorHolder"
-          c:group="org.bardframework.crud.sample.sample.SampleDto">
+          c:group="org.bardframework.crud.sample.employee.EmployeeDto">
         <constructor-arg name="validators">
             <util:map>
                 <entry key="email">
@@ -15,7 +15,13 @@
                               c:max="30"/>
                     </list>
                 </entry>
-                <entry key="displayName">
+                <entry key="firstName">
+                    <list>
+                        <bean class="org.bardframework.validator.field.common.TextLengthValidator" c:min="0"
+                              c:max="20"/>
+                    </list>
+                </entry>
+                <entry key="lastName">
                     <list>
                         <bean class="org.bardframework.validator.field.common.TextLengthValidator" c:min="0"
                               c:max="20"/>

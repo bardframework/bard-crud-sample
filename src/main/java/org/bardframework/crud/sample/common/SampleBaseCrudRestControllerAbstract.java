@@ -8,14 +8,10 @@ import org.springframework.web.bind.annotation.InitBinder;
 
 import java.util.UUID;
 
-public abstract class CrudSampleBaseCrudRestControllerAbstract<M extends CrudSampleBaseModelAbstract, C extends CrudSampleBaseCriteriaAbstract, D, S extends CrudSampleBaseServiceAbstract<M, C, D, ?>> extends BaseCrudRestControllerAbstract<M, C, D, S, String, CrudSampleUser> {
+public abstract class SampleBaseCrudRestControllerAbstract<M extends SampleBaseModelAbstract, C extends SampleBaseCriteriaAbstract, D, S extends SampleBaseServiceAbstract<M, C, D, ?>> extends BaseCrudRestControllerAbstract<M, C, D, S, String, SampleUser> {
 
     @Autowired
     protected BardSmartValidator smartValidator;
-
-    protected CrudSampleBaseCrudRestControllerAbstract(S service) {
-        super(service);
-    }
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
@@ -23,7 +19,7 @@ public abstract class CrudSampleBaseCrudRestControllerAbstract<M extends CrudSam
     }
 
     @Override
-    public CrudSampleUser getUser() {
-        return new CrudSampleUser(UUID.randomUUID().toString(), "anonymous");
+    public SampleUser getUser() {
+        return new SampleUser(UUID.randomUUID().toString(), "anonymous");
     }
 }

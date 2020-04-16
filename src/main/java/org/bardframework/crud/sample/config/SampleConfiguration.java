@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import java.util.List;
 
 @Configuration
-public class CrudSampleConfiguration extends WebSecurityConfigurerAdapter {
+public class SampleConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired(required = false)
     private List<Configurator> configurators;

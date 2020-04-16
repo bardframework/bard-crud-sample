@@ -19,8 +19,8 @@
 
     <properties>
         <bard.commons.version>0.2</bard.commons.version>
-        <bard.crud.version>1399.01.25</bard.crud.version>
-        <bard.version>1399.01.25</bard.version>
+        <bard.validator.version>0.2</bard.validator.version>
+        <bard.crud.version>0.2</bard.crud.version>
         <base-resources>${project.basedir}/src</base-resources>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -44,9 +44,9 @@
             <artifactId>aspectjtools</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.bardframework</groupId>
-            <artifactId>validator</artifactId>
-            <version>${bard.version}</version>
+            <groupId>org.bardframework.validator</groupId>
+            <artifactId>bard-validator</artifactId>
+            <version>${bard.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
@@ -141,6 +141,12 @@
                     <artifactId>junit</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.bardframework.crud</groupId>
+            <artifactId>crud-api</artifactId>
+            <version>${bard.crud.version}</version>
+            <type>test-jar</type>
         </dependency>
     </dependencies>
 
