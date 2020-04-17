@@ -17,8 +17,10 @@ import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 @Generated("com.querydsl.sql.codegen.MetaDataSerializer")
 public class QTbEmployee extends com.querydsl.sql.RelationalPathBase<QTbEmployee> {
 
-    public static final QTbEmployee tbEmployee = new QTbEmployee("tb_employee");
     private static final long serialVersionUID = -1441896858;
+
+    public static final QTbEmployee tbEmployee = new QTbEmployee("tb_employee");
+
     public final StringPath description = createString("description");
 
     public final StringPath email = createString("email");
