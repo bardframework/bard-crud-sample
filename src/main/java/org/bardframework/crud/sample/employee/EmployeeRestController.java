@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "employee", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = EmployeeRestController.PATH, produces = APPLICATION_JSON_VALUE)
 public class EmployeeRestController extends SampleBaseCrudRestControllerAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService> {
 
     public static final String PATH = "employee";

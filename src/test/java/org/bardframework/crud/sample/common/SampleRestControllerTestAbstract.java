@@ -1,8 +1,6 @@
 package org.bardframework.crud.sample.common;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.bardframework.base.crud.DataTableModel;
 import org.bardframework.base.crud.RestControllerTestAbstract;
 import org.bardframework.crud.sample.Application;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,18 +41,6 @@ public abstract class SampleRestControllerTestAbstract<M extends SampleBaseModel
     @Override
     public P getDataProvider() {
         return dataProvider;
-    }
-
-    @Override
-    public TypeReference<M> getModelTypeReference() {
-        return new TypeReference<M>() {
-        };
-    }
-
-    @Override
-    public <DM extends DataTableModel<M>> TypeReference<DM> getDataModelTypeReference() {
-        return new TypeReference<DM>() {
-        };
     }
 
     @Override

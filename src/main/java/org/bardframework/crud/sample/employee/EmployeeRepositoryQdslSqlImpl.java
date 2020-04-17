@@ -47,7 +47,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleBaseRepositoryQdslSqlAb
     protected <C extends StoreClause<C>> C toClause(C clause, EmployeeModel model, SampleUser user) {
         clause.set(tbEmployee.email, model.getEmail());
         clause.set(tbEmployee.firstName, model.getFirstName());
-        clause.set(tbEmployee.firstName, model.getLastName());
+        clause.set(tbEmployee.lastName, model.getLastName());
         clause.set(tbEmployee.description, model.getDescription());
         return clause;
     }

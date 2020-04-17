@@ -5,8 +5,8 @@ import org.bardframework.commons.spring.boot.SpringBootRunner;
 import org.bardframework.commons.web.filter.ExceptionHandlerFilter;
 import org.bardframework.crud.sample.config.JacksonConfiguration;
 import org.bardframework.crud.sample.config.JdbcConfig;
-import org.bardframework.crud.sample.config.SampleConfiguration;
 import org.bardframework.crud.sample.config.SampleExceptionControllerAdvice;
+import org.bardframework.crud.sample.config.SampleSecurityConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication(exclude = {ErrorMvcAutoConfiguration.class, ValidationAutoConfiguration.class, JacksonAutoConfiguration.class, DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class})
 @ComponentScan(basePackages = {"org.bardframework.crud.sample"}, excludeFilters = {@ComponentScan.Filter(value = {Configuration.class})})
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@Import({JacksonConfiguration.class, SampleConfiguration.class, SampleExceptionControllerAdvice.class, JdbcConfig.class})
+@Import({JacksonConfiguration.class, SampleSecurityConfiguration.class, SampleExceptionControllerAdvice.class, JdbcConfig.class})
 @ImportResource("classpath*:spring-configuration/**/**.xml")
 @EnableWebMvc
 @EnableTransactionManagement

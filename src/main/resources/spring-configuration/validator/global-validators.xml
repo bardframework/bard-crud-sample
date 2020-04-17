@@ -10,12 +10,12 @@
             <util:map>
                 <entry key="page">
                     <list>
-                        <bean class="org.bardframework.validator.field.number.LongGreaterThanValidator" c:min="1"/>
+                        <bean class="org.bardframework.validator.field.number.LongGreaterThanValidator" c:min="0"/>
                     </list>
                 </entry>
                 <entry key="size">
                     <list>
-                        <bean class="org.bardframework.validator.field.number.LongGreaterThanValidator" c:min="1"/>
+                        <bean class="org.bardframework.validator.field.number.LongGreaterThanValidator" c:min="0"/>
                     </list>
                 </entry>
             </util:map>
