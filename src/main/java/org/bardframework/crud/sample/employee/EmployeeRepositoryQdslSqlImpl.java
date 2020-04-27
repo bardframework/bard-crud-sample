@@ -28,7 +28,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleBaseRepositoryQdslSqlAb
     @Override
     protected <T> SQLQuery<T> setCriteria(EmployeeCriteria criteria, SQLQuery<T> query, SampleUser user) {
         if (null != criteria.getSearchQuery()) {
-            query.where(tbEmployee.firstName.like('%' + criteria.getSearchQuery() + '%'));
+            this.buildQuery(query, criteria.getSearchQuery(), tbEmployee.firstName);
         }
         return query;
     }

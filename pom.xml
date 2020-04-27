@@ -20,7 +20,7 @@
     <properties>
         <bard.commons.version>0.2</bard.commons.version>
         <bard.validator.version>0.2</bard.validator.version>
-        <bard.crud.version>0.2</bard.crud.version>
+        <bard.crud.version>0.3</bard.crud.version>
         <base-resources>${project.basedir}/src</base-resources>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
