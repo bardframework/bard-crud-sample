@@ -1,16 +1,17 @@
 package org.bardframework.crud.sample.employee;
 
+import io.github.jhipster.service.filter.StringFilter;
 import org.bardframework.crud.sample.common.SampleBaseCriteriaAbstract;
 
 public class EmployeeCriteria extends SampleBaseCriteriaAbstract {
 
-    private String searchQuery;
+    private StringFilter searchQuery;
 
-    public String getSearchQuery() {
+    public StringFilter getSearchQuery() {
         return searchQuery;
     }
 
-    public void setSearchQuery(String searchQuery) {
+    public void setSearchQuery(StringFilter searchQuery) {
         this.searchQuery = searchQuery;
     }
 }

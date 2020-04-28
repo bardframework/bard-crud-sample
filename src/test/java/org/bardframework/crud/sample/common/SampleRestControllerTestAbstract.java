@@ -2,6 +2,7 @@ package org.bardframework.crud.sample.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bardframework.base.crud.RestControllerTestAbstract;
+import org.bardframework.base.jackson.JacksonConfig;
 import org.bardframework.crud.sample.Application;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 @Import(Application.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource("classpath:test.properties")
-@ContextConfiguration(locations = {"classpath:develop-configuration/**/**.xml", "classpath*:test-configuration.xml"})
+@ContextConfiguration(locations = {"classpath:develop-configuration/**/**.xml", "classpath*:test-configuration.xml"}, classes = JacksonConfig.class)
 @AutoConfigureMockMvc
 public abstract class SampleRestControllerTestAbstract<M extends SampleBaseModelAbstract, C extends SampleBaseCriteriaAbstract, D, P extends SampleDataProviderServiceAbstract<M, C, D, ?, ?>> implements RestControllerTestAbstract<M, C, D, P, String, SampleUser> {
 
