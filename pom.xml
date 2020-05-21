@@ -6,20 +6,20 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.3.0.RELEASE</version>
         <relativePath/>
     </parent>
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>2.2.6</version>
+    <version>0.3</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bard.commons.version>0.2</bard.commons.version>
-        <bard.validator.version>0.2</bard.validator.version>
+        <bard.commons.version>0.3</bard.commons.version>
+        <bard.validator.version>0.3</bard.validator.version>
         <bard.crud.version>0.3</bard.crud.version>
         <base-resources>${project.basedir}/src</base-resources>
         <maven.compiler.source>1.8</maven.compiler.source>
