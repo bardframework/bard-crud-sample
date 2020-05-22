@@ -12,15 +12,15 @@
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>0.3</version>
+    <version>0.3.1</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bard.commons.version>0.3</bard.commons.version>
-        <bard.validator.version>0.3</bard.validator.version>
-        <bard.crud.version>0.3</bard.crud.version>
+        <bard.commons.version>0.3.1</bard.commons.version>
+        <bard.validator.version>0.3.1</bard.validator.version>
+        <bard.crud.version>0.3.1</bard.crud.version>
         <base-resources>${project.basedir}/src</base-resources>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -147,6 +147,11 @@
             <artifactId>crud-api</artifactId>
             <version>${bard.crud.version}</version>
             <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.6</version>
         </dependency>
     </dependencies>
 
