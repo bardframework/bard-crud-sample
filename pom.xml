@@ -18,9 +18,7 @@
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bard.commons.version>0.3.1</bard.commons.version>
-        <bard.validator.version>0.3.1</bard.validator.version>
-        <bard.crud.version>0.3.1</bard.crud.version>
+        <bardframework.version>0.3.1</bardframework.version>
         <base-resources>${project.basedir}/src</base-resources>
         <joda-time.version>2.10.6</joda-time.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -47,27 +45,27 @@
         <dependency>
             <groupId>org.bardframework.validator</groupId>
             <artifactId>bard-validator</artifactId>
-            <version>${bard.validator.version}</version>
+            <version>${bardframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-spring-boot</artifactId>
-            <version>${bard.commons.version}</version>
+            <version>${bardframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-swagger</artifactId>
-            <version>${bard.commons.version}</version>
+            <version>${bardframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-web</artifactId>
-            <version>${bard.commons.version}</version>
+            <version>${bardframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-querydsl-sql</artifactId>
-            <version>${bard.crud.version}</version>
+            <version>${bardframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -146,7 +144,7 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-api</artifactId>
-            <version>${bard.crud.version}</version>
+            <version>${bardframework.version}</version>
             <type>test-jar</type>
         </dependency>
         <dependency>
