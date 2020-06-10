@@ -12,13 +12,13 @@
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>0.3.1</version>
+    <version>0.3.2</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bardframework.version>0.3.1</bardframework.version>
+        <bardframework.version>0.3.2</bardframework.version>
         <base-resources>${project.basedir}/src</base-resources>
         <joda-time.version>2.10.6</joda-time.version>
         <maven.compiler.source>1.8</maven.compiler.source>
