@@ -18,7 +18,7 @@
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bardframework.version>0.3.3</bardframework.version>
+        <bardframework.version>0.3.4</bardframework.version>
         <base-resources>${project.basedir}/src</base-resources>
         <joda-time.version>2.10.6</joda-time.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -45,22 +45,22 @@
         <dependency>
             <groupId>org.bardframework.validator</groupId>
             <artifactId>bard-validator</artifactId>
-            <version>${bardframework.version}</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-spring-boot</artifactId>
-            <version>${bardframework.version}</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-swagger</artifactId>
-            <version>${bardframework.version}</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-web</artifactId>
-            <version>${bardframework.version}</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.crud</groupId>
