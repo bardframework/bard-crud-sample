@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.common.controller;
 
-import org.bardframework.base.crud.BaseRestController;
+import org.bardframework.crud.api.base.BaseRestController;
 import org.bardframework.crud.sample.common.SampleUser;
 
 import java.util.UUID;

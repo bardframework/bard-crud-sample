@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.common;
 
-import org.bardframework.base.crud.BaseServiceAbstract;
+import org.bardframework.crud.api.base.BaseServiceAbstract;
 
 public abstract class SampleBaseServiceAbstract<M extends SampleBaseModelAbstract, C extends SampleBaseCriteriaAbstract, D, R extends SampleBaseRepository<M, C>> extends BaseServiceAbstract<M, C, D, R, String, SampleUser> {
 }

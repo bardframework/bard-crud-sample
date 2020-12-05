@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.common;
 
-import org.bardframework.base.crud.DataProviderServiceAbstract;
+import org.bardframework.crud.api.base.DataProviderServiceAbstract;
 
 public abstract class SampleDataProviderServiceAbstract<M extends SampleBaseModelAbstract, C extends SampleBaseCriteriaAbstract, D, S extends SampleBaseServiceAbstract<M, C, D, R>, R extends SampleBaseRepository<M, C>> extends DataProviderServiceAbstract<M, C, D, S, R, String, SampleUser> {
 

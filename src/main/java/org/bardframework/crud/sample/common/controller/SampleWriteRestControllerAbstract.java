@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.common.controller;
 
-import org.bardframework.base.crud.WriteRestController;
+import org.bardframework.crud.api.base.WriteRestController;
 import org.bardframework.crud.sample.common.SampleBaseCriteriaAbstract;
 import org.bardframework.crud.sample.common.SampleBaseModelAbstract;
 import org.bardframework.crud.sample.common.SampleBaseServiceAbstract;

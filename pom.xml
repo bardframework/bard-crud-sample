@@ -6,26 +6,27 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.3.1.RELEASE</version>
+        <version>2.4.0</version>
         <relativePath/>
     </parent>
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>0.3.3</version>
+    <version>0.4</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bardframework.version>0.3.3</bardframework.version>
+        <bardframework.commons.version>0.4</bardframework.commons.version>
+        <bardframework.crud.version>0.4</bardframework.crud.version>
+        <bardframework.validator.version>0.4</bardframework.validator.version>
         <base-resources>${project.basedir}/src</base-resources>
         <joda-time.version>2.10.6</joda-time.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <querydsl.version>4.3.1</querydsl.version>
         <start-class>org.bardframework.crud.sample.Application</start-class>
     </properties>
 
@@ -45,27 +46,27 @@
         <dependency>
             <groupId>org.bardframework.validator</groupId>
             <artifactId>bard-validator</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-spring-boot</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-swagger</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-web</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-querydsl-sql</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.crud.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -144,7 +145,7 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-api</artifactId>
-            <version>${bardframework.version}</version>
+            <version>${bardframework.commons.version}</version>
             <type>test-jar</type>
         </dependency>
         <dependency>

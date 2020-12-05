@@ -5,7 +5,7 @@ import com.querydsl.core.types.QBean;
 import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
-import org.bardframework.base.utils.QueryDslUtils;
+import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleBaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.springframework.stereotype.Repository;
@@ -28,7 +28,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleBaseRepositoryQdslSqlAb
     @Override
     protected <T> SQLQuery<T> setCriteria(EmployeeCriteria criteria, SQLQuery<T> query, SampleUser user) {
         if (null != criteria.getSearchQuery()) {
-            this.buildQuery(query, criteria.getSearchQuery(), tbEmployee.firstName);
+            query.where(buildQuery(criteria.getSearchQuery(), tbEmployee.firstName));
         }
         return query;
     }

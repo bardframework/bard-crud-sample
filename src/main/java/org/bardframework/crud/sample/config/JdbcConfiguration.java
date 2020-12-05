@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-public class JdbcConfig {
+public class JdbcConfiguration {
 
     private com.querydsl.sql.Configuration querydslConfiguration(@Autowired SQLTemplates templates) {
         com.querydsl.sql.Configuration configuration = new com.querydsl.sql.Configuration(templates);

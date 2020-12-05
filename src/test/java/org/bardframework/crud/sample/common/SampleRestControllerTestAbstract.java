@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.bardframework.base.crud.RestControllerTestAbstract;
-import org.bardframework.base.jackson.JacksonConfig;
+import org.bardframework.crud.api.base.RestControllerTestAbstract;
+import org.bardframework.crud.api.jackson.JacksonConfig;
 import org.bardframework.crud.sample.Application;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
