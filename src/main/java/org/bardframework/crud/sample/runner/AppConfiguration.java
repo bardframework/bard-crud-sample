@@ -6,8 +6,8 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableAspectJAutoProxy(proxyTargetClass = true)
 @EnableTransactionManagement
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @ImportResource("classpath*:*-configuration/**/**.xml")
 public class AppConfiguration {
 
