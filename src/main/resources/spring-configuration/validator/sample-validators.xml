@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean class="org.bardframework.validator.holder.FieldValidatorHolder"
-          c:group="org.bardframework.crud.sample.employee.EmployeeDto">
+          c:group="org.bardframework.crud.sample.app.employee.EmployeeDto">
         <constructor-arg name="validators">
             <util:map>
                 <entry key="email">

@@ -6,7 +6,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="org.bardframework.crud.sample" level="DEBUG" additivity="false">
+        <Logger name="org.bardframework.crud.sample.app" level="DEBUG" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
         <Root level="INFO">

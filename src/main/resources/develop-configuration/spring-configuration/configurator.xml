@@ -2,4 +2,5 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean class="org.bardframework.commons.swagger.SwaggerConfigurator"/>
+    <bean class="org.bardframework.commons.monitoring.MonitoringConfigurator"/>
 </beans>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.4.0</version>
+        <version>2.4.2</version>
         <relativePath/>
     </parent>
 
@@ -27,7 +27,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <start-class>org.bardframework.crud.sample.Application</start-class>
     </properties>
 
     <dependencies>
@@ -56,6 +55,11 @@
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-swagger</artifactId>
+            <version>${bardframework.commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bardframework.commons</groupId>
+            <artifactId>common-monitoring</artifactId>
             <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
@@ -158,22 +162,27 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <descriptors>
-                        <descriptor>${base-resources}/assembly/assembly.xml</descriptor>
-                    </descriptors>
+                    <mainClass>org.bardframework.crud.sample.runner.Application</mainClass>
+                    <layout>JAR</layout>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
                         <exclude>develop-configuration/**</exclude>
-                        <exclude>unused-configuration/**</exclude>
+                        <exclude>unused/**</exclude>
                         <exclude>*.xml</exclude>
-                        <exclude>**/DevelopApplication.*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -205,7 +214,7 @@
                     <jdbcUrl>${database.url}</jdbcUrl>
                     <jdbcUser>${database.username}</jdbcUser>
                     <jdbcPassword>${database.password}</jdbcPassword>
-                    <packageName>org.bardframework.crud.sample.common.entity</packageName>
+                    <packageName>org.bardframework.crud.common.entity</packageName>
                     <targetFolder>${project.basedir}/src/main/java/</targetFolder>
                     <sourceFolder/>
                     <customTypes>
@@ -245,6 +254,6 @@
     </developers>
 
     <scm>
-        <url>https://github.com/v-zafari/bard-crud-sample.git</url>
+        <url>https://github.com/bardframework/bard-crud-sample.git</url>
     </scm>
 </project>
