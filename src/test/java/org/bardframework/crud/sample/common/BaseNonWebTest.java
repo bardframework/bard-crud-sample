@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner.configuration;
+package org.bardframework.crud.sample.common;
 
 import org.bardframework.commons.spring.boot.ConfigsConfiguration;
 import org.bardframework.crud.sample.runner.AppConfiguration;

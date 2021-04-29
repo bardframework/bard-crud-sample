@@ -1,7 +1,6 @@
 package org.bardframework.crud.sample.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.bardframework.crud.sample.runner.configuration.BaseWebTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.web.client.TestRestTemplate;

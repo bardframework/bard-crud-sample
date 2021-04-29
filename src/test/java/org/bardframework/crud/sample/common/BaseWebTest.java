@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner.configuration;
+package org.bardframework.crud.sample.common;
 
 import org.bardframework.crud.sample.runner.Application;
 import org.springframework.boot.test.context.SpringBootTest;
