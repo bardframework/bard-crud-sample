@@ -18,7 +18,7 @@
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <bardframework.commons.version>0.4</bardframework.commons.version>
+        <bardframework.commons.version>0.5</bardframework.commons.version>
         <bardframework.crud.version>0.4</bardframework.crud.version>
         <bardframework.validator.version>0.4</bardframework.validator.version>
         <base-resources>${project.basedir}/src</base-resources>
@@ -150,7 +150,7 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-api</artifactId>
-            <version>${bardframework.commons.version}</version>
+            <version>${bardframework.crud.version}</version>
             <type>test-jar</type>
         </dependency>
         <dependency>

@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.common;
 
 import org.bardframework.commons.spring.boot.ConfigsConfiguration;
-import org.bardframework.crud.sample.runner.AppConfiguration;
-import org.bardframework.crud.sample.runner.QueryDslConfiguration;
+import org.bardframework.crud.sample.runner.config.AppConfiguration;
+import org.bardframework.crud.sample.runner.config.QueryDslConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;

@@ -1,7 +1,8 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bardframework.commons.web.filter.ExceptionHandlerFilter;
+import org.bardframework.crud.sample.runner.ExceptionControllerAdvice;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

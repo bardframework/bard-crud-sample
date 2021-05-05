@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import com.querydsl.sql.SQLQueryFactory;
 import com.querydsl.sql.SQLTemplates;

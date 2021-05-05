@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

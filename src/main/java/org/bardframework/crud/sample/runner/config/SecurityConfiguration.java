@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import org.bardframework.commons.config.Configurator;
 import org.bardframework.commons.utils.CollectionUtils;

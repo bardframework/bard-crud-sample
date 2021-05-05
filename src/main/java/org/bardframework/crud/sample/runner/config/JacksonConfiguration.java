@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
