@@ -1,4 +1,3 @@
 # Bard CRUD Sample
-build artifact:
 
-    mvn clean package assembly:single
+* set `dev` as active profile to run application in development mode
