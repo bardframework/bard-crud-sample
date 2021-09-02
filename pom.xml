@@ -6,28 +6,35 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.5.3</version>
+        <version>2.5.4</version>
         <relativePath/>
     </parent>
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>0.4.1</version>
+    <version>0.4.1.1</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
+        <!-- versions -->
         <bardframework.commons.version>0.5</bardframework.commons.version>
         <bardframework.crud.version>0.4</bardframework.crud.version>
         <bardframework.validator.version>0.4</bardframework.validator.version>
-        <base-resources>${project.basedir}/src</base-resources>
         <joda-time.version>2.10.6</joda-time.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- plugin versions -->
+        <sonar-maven-plugin.version>3.9.0.2155</sonar-maven-plugin.version>
+        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
+        <!-- variables -->
+        <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
+        <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
+        <dockerfile.tag>${project.version}</dockerfile.tag>
+        <dockerfile.baseImage>openjdk:17-alpine</dockerfile.baseImage>
     </properties>
 
     <dependencies>
@@ -190,7 +197,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${properties-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -250,13 +257,23 @@
                 <version>${dockerfile-maven-plugin.version}</version>
                 <configuration>
                     <dockerfile>Dockerfile</dockerfile>
-                    <repository>docker.haampaa.ir/${project.artifactId}</repository>
-                    <tag>${project.version}</tag>
+                    <repository>${dockerfile.repository}</repository>
+                    <tag>${dockerfile.tag}</tag>
                     <buildArgs>
-                        <BASE_IMAGE>openjdk:8-alpine</BASE_IMAGE>
+                        <BASE_IMAGE>${dockerfile.baseImage}</BASE_IMAGE>
                         <APP_VERSION>${project.version}</APP_VERSION>
                     </buildArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>

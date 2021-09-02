@@ -4,6 +4,6 @@ FROM ${BASE_IMAGE}
 ARG APP_VERSION
 MAINTAINER Vahid Zafari <va.zafari@gmail.com>
 
-ENTRYPOINT ["java", "-cp", "/opt/bard/app/bard-crud-sample.jar:/opt/bard/app/conf", "-Dspring.profiles.active=prod", "org.springframework.boot.loader.JarLauncher"]
+ENTRYPOINT ["java", "-cp", "/data/crud-sample/app/crud-sample.jar:/data/crud-sample/conf/", "-Dspring.profiles.active=prod", "org.springframework.boot.loader.JarLauncher"]
 
-ADD target/bard-crud-sample-${APP_VERSION}.jar   /opt/bard/app/bard-crud-sample.jar
+ADD target/bard-crud-sample-${APP_VERSION}.jar   /data/crud-sample/app/crud-sample.jar

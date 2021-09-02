@@ -6,8 +6,8 @@ Requires=network.target
 User=root
 Restart=on-failure
 RestartSec=5
-WorkingDirectory=/opt/bard/
-ExecStart=java -cp apps/crud-sample/*:conf/crud-sample -Dspring.profiles.active=prod org.springframework.boot.loader.JarLauncher
+WorkingDirectory=/data/crud-sample/
+ExecStart=java -cp app/crud-sample.jar:conf/ -Dspring.profiles.active=prod org.springframework.boot.loader.JarLauncher
 TimeoutStopSec=10
 SuccessExitStatus=143
 
