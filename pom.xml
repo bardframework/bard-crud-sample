@@ -6,30 +6,29 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.5.4</version>
+        <version>2.6.0</version>
         <relativePath/>
     </parent>
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>0.4.1.1</version>
+    <version>0.9.4</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
         <!-- versions -->
-        <bardframework.commons.version>0.5</bardframework.commons.version>
-        <bardframework.crud.version>0.4</bardframework.crud.version>
-        <bardframework.validator.version>0.4</bardframework.validator.version>
-        <joda-time.version>2.10.6</joda-time.version>
+        <bardframework.commons.version>0.9.5</bardframework.commons.version>
+        <bardframework.crud.version>0.9.4</bardframework.crud.version>
+        <bardframework.validator.version>0.9.3</bardframework.validator.version>
         <!-- plugin versions -->
-        <sonar-maven-plugin.version>3.9.0.2155</sonar-maven-plugin.version>
+        <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <!-- variables -->
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
@@ -159,11 +158,6 @@
             <artifactId>crud-api</artifactId>
             <version>${bardframework.crud.version}</version>
             <type>test-jar</type>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>${joda-time.version}</version>
         </dependency>
     </dependencies>
 
