@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.app.employee;
 
-import io.github.jhipster.service.filter.StringFilter;
+import org.bardframework.crud.api.filter.StringFilter;
 import org.bardframework.crud.sample.common.BaseCriteriaAbstract;
 
 public class EmployeeCriteria extends BaseCriteriaAbstract {

@@ -1,7 +1,7 @@
 package org.bardframework.crud.sample.runner.config;
 
-import org.bardframework.commons.config.Configurator;
-import org.bardframework.commons.utils.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
+import org.bardframework.commons.security.SecurityConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +14,7 @@ import java.util.List;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired(required = false)
-    private List<Configurator> configurators;
+    private List<SecurityConfigurer> configurators;
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {

@@ -5,6 +5,7 @@ import com.querydsl.core.types.QBean;
 import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
+import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.sample.common.User;
@@ -25,12 +26,15 @@ public class EmployeeRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract
             tbEmployee.description
     );
 
+    public EmployeeRepositoryQdslSqlImpl(SQLQueryFactory queryFactory) {
+        super(queryFactory);
+    }
+
     @Override
-    protected <T> SQLQuery<T> setCriteria(EmployeeCriteria criteria, SQLQuery<T> query, User user) {
+    protected void setCriteria(EmployeeCriteria criteria, SQLQuery<?> query, User user) {
         if (null != criteria.getSearchQuery()) {
             query.where(buildQuery(criteria.getSearchQuery(), tbEmployee.firstName));
         }
-        return query;
     }
 
     @Override
@@ -53,9 +57,8 @@ public class EmployeeRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected EmployeeModel setIdentifier(EmployeeModel model, User user) {
+    protected void setIdentifier(EmployeeModel model, User user) {
         model.setId(UUID.randomUUID().toString());
-        return model;
     }
 
     @Override

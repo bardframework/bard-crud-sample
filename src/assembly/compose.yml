@@ -1,21 +1,24 @@
 version: '3.7'
 
 networks:
-  sample-network:
+  bard-network:
     driver: bridge
-    name: sample-network
+    name: bard-network
 
 services:
-  crud-sample-database:
+  bard-crud-sample-database:
     image: mariadb:10
-    networks:
-      - sample-network
-    ports:
-      - 3306:3306
     volumes:
-      - /D/data/docker/mariadb/data:/var/lib/mysql:rw
-      - /D/data/docker/mariadb/logs:/var/log/mysql/
+      - /data/docker/mariadb/data:/var/lib/mysql:rw
+      - /data/docker/mariadb/logs:/var/log/mysql/
       - ../assembly:/docker-entrypoint-initdb.d
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 1
+      MARIADB_ROOT_PASSWORD: pass
+      MARIADB_DATABASE: bard-crud-sample
+      MARIADB_USER: bard
+      MARIADB_PASSWORD: 1
+    ports:
+      - 3306:3306
+    networks:
+      - bard-network

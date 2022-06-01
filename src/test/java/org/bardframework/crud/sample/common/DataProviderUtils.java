@@ -1,6 +1,6 @@
 package org.bardframework.crud.sample.common;
 
-import org.bardframework.commons.utils.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.UUID;
 

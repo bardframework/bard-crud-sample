@@ -5,6 +5,7 @@ import com.querydsl.core.types.QBean;
 import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
+import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.sample.common.User;
@@ -21,12 +22,15 @@ public class GenderRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<G
             tbGender.order
     );
 
+    public GenderRepositoryQdslSqlImpl(SQLQueryFactory queryFactory) {
+        super(queryFactory);
+    }
+
     @Override
-    protected <T> SQLQuery<T> setCriteria(GenderCriteria criteria, SQLQuery<T> query, User user) {
+    protected void setCriteria(GenderCriteria criteria, SQLQuery<?> query, User user) {
         if (null != criteria.getSearchQuery()) {
             query.where(tbGender.title.like('%' + criteria.getSearchQuery() + '%'));
         }
-        return query;
     }
 
     @Override
@@ -46,7 +50,7 @@ public class GenderRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<G
     }
 
     @Override
-    protected GenderModel setIdentifier(GenderModel model, User user) {
+    protected void setIdentifier(GenderModel model, User user) {
         throw new IllegalStateException("not supported");
     }
 

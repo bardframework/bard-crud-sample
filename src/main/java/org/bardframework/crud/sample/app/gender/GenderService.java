@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GenderService extends BaseServiceAbstract<GenderModel, GenderCriteria, Object, GenderRepository> {
+
+    public GenderService(GenderRepository repository) {
+        super(repository);
+    }
+
     @Override
     protected GenderModel onSave(Object dto, User user) {
         throw new IllegalStateException("not supported");
