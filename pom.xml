@@ -200,7 +200,7 @@
                         <phase>initialize</phase>
                         <configuration>
                             <files>
-                                <file>src/main/resources/develop-configuration/database-config.properties</file>
+                                <file>src/main/resources/develop-configuration/application.properties</file>
                             </files>
                         </configuration>
                     </execution>
