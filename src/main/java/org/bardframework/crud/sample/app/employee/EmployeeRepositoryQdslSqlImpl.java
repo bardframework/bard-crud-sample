@@ -33,7 +33,7 @@ public class EmployeeRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract
     @Override
     protected void setCriteria(EmployeeCriteria criteria, SQLQuery<?> query, User user) {
         if (null != criteria.getSearchQuery()) {
-            query.where(buildQuery(criteria.getSearchQuery(), tbEmployee.firstName));
+            query.where(QueryDslUtils.buildQuery(criteria.getSearchQuery(), tbEmployee.firstName));
         }
     }
 

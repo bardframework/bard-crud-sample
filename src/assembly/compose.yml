@@ -7,17 +7,18 @@ networks:
 
 services:
   bard-crud-sample-database:
-    image: mariadb:10
+    image: mysql:8
     volumes:
-      - /data/docker/mariadb/data:/var/lib/mysql:rw
-      - /data/docker/mariadb/logs:/var/log/mysql/
-      - ../assembly:/docker-entrypoint-initdb.d
+      - /data/bard-crud-sample-database/data:/var/lib/mysql:rw
+      - /data/bard-crud-sample-database/logs:/var/log/mysql/
+      - /etc/localtime:/etc/localtime:ro
+        - ../assembly:/docker-entrypoint-initdb.d
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: pass
-      MARIADB_DATABASE: bard-crud-sample
-      MARIADB_USER: bard
-      MARIADB_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: bard-crud-sample
+      MYSQL_USER: bard
+      MYSQL_PASSWORD: 1
     ports:
       - 3306:3306
     networks:

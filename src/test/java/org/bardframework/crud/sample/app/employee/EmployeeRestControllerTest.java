@@ -1,10 +1,10 @@
 package org.bardframework.crud.sample.app.employee;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import org.bardframework.crud.api.base.PagedData;
 import org.bardframework.crud.sample.common.RestControllerTestAbstract;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -29,8 +29,8 @@ class EmployeeRestControllerTest extends RestControllerTestAbstract<EmployeeMode
     }
 
     @Override
-    public TypeReference<? extends Page<EmployeeModel>> getDataModelTypeReference() {
-        return new TypeReference<Page<EmployeeModel>>() {
+    public TypeReference<? extends PagedData<EmployeeModel>> getDataModelTypeReference() {
+        return new TypeReference<PagedData<EmployeeModel>>() {
         };
     }
 }
