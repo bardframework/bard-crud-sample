@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeDataProvider extends DataProviderServiceAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeRepository> {
 
+    public EmployeeDataProvider(EmployeeService service) {
+        super(service);
+    }
+
     @Override
     public EmployeeDto getDto(User sampleUser) {
         EmployeeDto dto = new EmployeeDto();
