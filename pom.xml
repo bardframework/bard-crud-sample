@@ -217,6 +217,7 @@
                 <artifactId>querydsl-maven-plugin</artifactId>
                 <version>${querydsl.version}</version>
                 <configuration>
+                    <skip>true</skip>
                     <jdbcDriver>${database.driver_class_name}</jdbcDriver>
                     <jdbcUrl>${database.url}</jdbcUrl>
                     <jdbcUser>${database.username}</jdbcUser>
