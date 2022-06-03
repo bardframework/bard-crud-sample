@@ -15,4 +15,8 @@ public class EmployeeRestController extends
         SampleRestControllerAbstract<EmployeeService> implements
         ReadRestController<EmployeeModel, EmployeeCriteria, EmployeeService, String, SampleUser>,
         WriteRestController<EmployeeModel, EmployeeDto, EmployeeService, String, SampleUser> {
+
+    protected EmployeeRestController(EmployeeService service) {
+        super(service);
+    }
 }

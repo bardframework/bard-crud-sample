@@ -1,13 +1,9 @@
-package org.bardframework.crud.sample.base;
+package org.bardframework.crud.sample.common.base;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.bardframework.commons.utils.ReflectionUtils;
 import org.bardframework.crud.api.base.DataProviderService;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
-import org.bardframework.crud.sample.common.base.SampleModelAbstract;
-import org.bardframework.crud.sample.common.base.SampleRepository;
-import org.bardframework.crud.sample.common.base.SampleServiceAbstract;
 
 import java.util.UUID;
 

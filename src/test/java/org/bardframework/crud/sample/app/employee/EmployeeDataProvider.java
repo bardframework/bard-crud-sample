@@ -2,8 +2,8 @@ package org.bardframework.crud.sample.app.employee;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.assertj.core.api.Assertions;
-import org.bardframework.crud.sample.base.SampleDataProviderService;
 import org.bardframework.crud.sample.common.SampleUser;
+import org.bardframework.crud.sample.common.base.SampleDataProviderService;
 import org.springframework.stereotype.Service;
 
 @Service

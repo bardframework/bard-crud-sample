@@ -8,11 +8,14 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
 public abstract class SampleRestControllerAbstract<S extends BaseService<?, ?, ?, String, SampleUser>> extends SampleControllerAbstract {
-    @Autowired
-    protected S service;
+    protected final S service;
 
     @Autowired
     protected BardSmartValidator smartValidator;
+
+    protected SampleRestControllerAbstract(S service) {
+        this.service = service;
+    }
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) {

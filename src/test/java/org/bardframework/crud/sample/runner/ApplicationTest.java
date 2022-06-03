@@ -1,18 +1,13 @@
 package org.bardframework.crud.sample.runner;
 
 import org.assertj.core.api.Assertions;
-import org.bardframework.crud.sample.base.SampleWebTest;
+import org.bardframework.crud.sample.common.base.SampleControllerTest;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 
-public class ApplicationTest implements SampleWebTest {
-
-    @Autowired
-    TestRestTemplate restTemplate;
+public class ApplicationTest extends SampleControllerTest {
 
     @Test
     public void checkMetrics() {
-        Assertions.assertThat(this.restTemplate.getForObject("/actuator/health", String.class)).contains("UP");
+        Assertions.assertThat(this.getRestTemplate().getForObject("/actuator/health", String.class)).contains("UP");
     }
 }
