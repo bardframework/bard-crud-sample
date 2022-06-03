@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.app.employee;
 
-import org.bardframework.crud.sample.common.BaseModelAbstract;
+import org.bardframework.crud.sample.common.base.SampleModelAbstract;
 
-public class EmployeeModel extends BaseModelAbstract {
+public class EmployeeModel extends SampleModelAbstract {
     private String email;
     private String firstName;
     private String lastName;

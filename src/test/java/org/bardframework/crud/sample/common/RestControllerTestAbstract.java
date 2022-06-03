@@ -1,6 +1,8 @@
 package org.bardframework.crud.sample.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
+import org.bardframework.crud.sample.common.base.SampleModelAbstract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -8,7 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 @AutoConfigureMockMvc
-public abstract class RestControllerTestAbstract<M extends BaseModelAbstract, C extends BaseCriteriaAbstract, D, P extends DataProviderServiceAbstract<M, C, D, ?, ?>> implements org.bardframework.crud.api.base.RestControllerTestAbstract<M, C, D, P, String, User>, BaseWebTest {
+public abstract class RestControllerTestAbstract<M extends SampleModelAbstract, C extends SampleCriteriaAbstract, D, P extends DataProviderServiceAbstract<M, C, D, ?, ?>> implements org.bardframework.crud.api.base.RestControllerTestAbstract<M, C, D, P, String, User>, BaseWebTest {
 
     @Autowired
     private P dataProvider;

@@ -1,11 +1,11 @@
 package org.bardframework.crud.sample.app.employee;
 
-import org.bardframework.crud.sample.common.BaseServiceAbstract;
 import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.base.SampleServiceAbstract;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeService extends BaseServiceAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeRepository> {
+public class EmployeeService extends SampleServiceAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeRepository> {
 
     public EmployeeService(EmployeeRepository repository) {
         super(repository);

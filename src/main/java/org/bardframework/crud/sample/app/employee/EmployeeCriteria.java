@@ -1,9 +1,9 @@
 package org.bardframework.crud.sample.app.employee;
 
 import org.bardframework.crud.api.filter.StringFilter;
-import org.bardframework.crud.sample.common.BaseCriteriaAbstract;
+import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
 
-public class EmployeeCriteria extends BaseCriteriaAbstract {
+public class EmployeeCriteria extends SampleCriteriaAbstract {
 
     private StringFilter searchQuery;
 

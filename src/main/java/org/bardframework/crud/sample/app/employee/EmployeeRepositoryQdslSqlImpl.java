@@ -7,8 +7,8 @@ import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
-import org.bardframework.crud.sample.common.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -16,7 +16,7 @@ import java.util.UUID;
 import static org.bardframework.crud.sample.common.entity.QTbEmployee.tbEmployee;
 
 @Repository
-public class EmployeeRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<EmployeeModel, EmployeeCriteria> implements EmployeeRepository {
+public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<EmployeeModel, EmployeeCriteria> implements EmployeeRepository {
 
     private static final QBean<EmployeeModel> Q_BEAN = QueryDslUtils.bean(EmployeeModel.class,
             tbEmployee.id,

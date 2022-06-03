@@ -7,14 +7,14 @@ import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
-import org.bardframework.crud.sample.common.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
 import org.springframework.stereotype.Repository;
 
 import static org.bardframework.crud.sample.common.entity.QTbGender.tbGender;
 
 @Repository
-public class GenderRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<GenderModel, GenderCriteria> implements GenderRepository {
+public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<GenderModel, GenderCriteria> implements GenderRepository {
 
     private static final QBean<GenderModel> Q_BEAN = QueryDslUtils.bean(GenderModel.class,
             tbGender.id,
