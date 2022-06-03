@@ -1,11 +1,7 @@
 package org.bardframework.crud.sample.app.employee;
 
-import org.bardframework.crud.sample.common.RepositoryTestAbstract;
+import org.bardframework.crud.sample.base.SampleRepositoryTest;
 
-public class EmployeeRepositoryTest extends RepositoryTestAbstract<EmployeeModel, EmployeeCriteria, EmployeeRepository, EmployeeDataProvider> {
+public class EmployeeRepositoryTest extends SampleRepositoryTest<EmployeeModel, EmployeeCriteria, EmployeeRepository, EmployeeDataProvider> {
 
-    @Override
-    public void testGetOne() {
-
-    }
 }

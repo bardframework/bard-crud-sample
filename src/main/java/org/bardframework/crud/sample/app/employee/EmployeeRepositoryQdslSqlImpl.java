@@ -7,7 +7,7 @@ import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
-import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
 import org.springframework.stereotype.Repository;
 
@@ -31,7 +31,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected void setCriteria(EmployeeCriteria criteria, SQLQuery<?> query, User user) {
+    protected void setCriteria(EmployeeCriteria criteria, SQLQuery<?> query, SampleUser user) {
         QueryDslUtils.applyFilter(query, criteria.getSearchQuery(), tbEmployee.lastName);
     }
 
@@ -46,7 +46,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected <C extends StoreClause<C>> C toClause(C clause, EmployeeModel model, User user) {
+    protected <C extends StoreClause<C>> C toClause(C clause, EmployeeModel model, SampleUser user) {
         clause.set(tbEmployee.email, model.getEmail());
         clause.set(tbEmployee.firstName, model.getFirstName());
         clause.set(tbEmployee.lastName, model.getLastName());
@@ -55,7 +55,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected void setIdentifier(EmployeeModel model, User user) {
+    protected void setIdentifier(EmployeeModel model, SampleUser user) {
         model.setId(UUID.randomUUID().toString());
     }
 

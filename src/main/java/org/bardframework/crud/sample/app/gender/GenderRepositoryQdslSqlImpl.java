@@ -7,7 +7,7 @@ import com.querydsl.sql.RelationalPathBase;
 import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
-import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +27,7 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected void setCriteria(GenderCriteria criteria, SQLQuery<?> query, User user) {
+    protected void setCriteria(GenderCriteria criteria, SQLQuery<?> query, SampleUser user) {
         if (null != criteria.getSearchQuery()) {
             query.where(tbGender.title.like('%' + criteria.getSearchQuery() + '%'));
         }
@@ -44,13 +44,13 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected <C extends StoreClause<C>> C toClause(C clause, GenderModel model, User user) {
+    protected <C extends StoreClause<C>> C toClause(C clause, GenderModel model, SampleUser user) {
         throw new IllegalStateException("not supported");
 
     }
 
     @Override
-    protected void setIdentifier(GenderModel model, User user) {
+    protected void setIdentifier(GenderModel model, SampleUser user) {
         throw new IllegalStateException("not supported");
     }
 

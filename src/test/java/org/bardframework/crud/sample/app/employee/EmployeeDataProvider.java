@@ -1,25 +1,25 @@
 package org.bardframework.crud.sample.app.employee;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.assertj.core.api.Assertions;
-import org.bardframework.crud.sample.common.DataProviderServiceAbstract;
-import org.bardframework.crud.sample.common.DataProviderUtils;
-import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.base.SampleDataProviderService;
+import org.bardframework.crud.sample.common.SampleUser;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeDataProvider extends DataProviderServiceAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeRepository> {
+public class EmployeeDataProvider extends SampleDataProviderService<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeRepository> {
 
     public EmployeeDataProvider(EmployeeService service) {
         super(service);
     }
 
     @Override
-    public EmployeeDto getDto(User sampleUser) {
+    public EmployeeDto getDto() {
         EmployeeDto dto = new EmployeeDto();
-        dto.setEmail(DataProviderUtils.getEmailValid());
-        dto.setFirstName(DataProviderUtils.getNameValid());
-        dto.setLastName(DataProviderUtils.getNameValid());
-        dto.setDescription(DataProviderUtils.getDescriptionValid());
+        dto.setEmail(RandomStringUtils.randomAlphabetic(1, 10));
+        dto.setFirstName(RandomStringUtils.randomAlphabetic(1, 10));
+        dto.setLastName(RandomStringUtils.randomAlphabetic(1, 10));
+        dto.setDescription(RandomStringUtils.randomAlphanumeric(0, 100));
         return dto;
     }
 
@@ -32,8 +32,8 @@ public class EmployeeDataProvider extends DataProviderServiceAbstract<EmployeeMo
     }
 
     @Override
-    protected EmployeeDto makeInvalid(EmployeeDto dto) {
-        dto.setFirstName(DataProviderUtils.getInvalidName());
+    public EmployeeDto makeInvalid(EmployeeDto dto) {
+        dto.setFirstName(RandomStringUtils.randomAlphabetic(500));
         return dto;
     }
 
@@ -46,8 +46,13 @@ public class EmployeeDataProvider extends DataProviderServiceAbstract<EmployeeMo
     }
 
     @Override
-    protected EmployeeModel makeInvalid(EmployeeModel model) {
+    public EmployeeModel makeInvalid(EmployeeModel model) {
         model.setEmail(null);
         return model;
+    }
+
+    @Override
+    public boolean isDuplicate(EmployeeModel first, EmployeeModel second, SampleUser user) {
+        return false;
     }
 }

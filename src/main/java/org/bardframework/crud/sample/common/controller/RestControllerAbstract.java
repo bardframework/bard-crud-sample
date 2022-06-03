@@ -1,14 +1,14 @@
 package org.bardframework.crud.sample.common.controller;
 
 import org.bardframework.crud.api.base.BaseRestController;
-import org.bardframework.crud.sample.common.User;
+import org.bardframework.crud.sample.common.SampleUser;
 
 import java.util.UUID;
 
-public abstract class RestControllerAbstract implements BaseRestController<User> {
+public abstract class RestControllerAbstract implements BaseRestController<SampleUser> {
 
     @Override
-    public User getUser() {
-        return new User(UUID.randomUUID().toString(), "anonymous");
+    public SampleUser getUser() {
+        return new SampleUser(UUID.randomUUID().toString(), "anonymous");
     }
 }

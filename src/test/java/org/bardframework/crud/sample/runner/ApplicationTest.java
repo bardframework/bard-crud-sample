@@ -1,12 +1,12 @@
 package org.bardframework.crud.sample.runner;
 
 import org.assertj.core.api.Assertions;
-import org.bardframework.crud.sample.common.BaseWebTest;
+import org.bardframework.crud.sample.base.SampleWebTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
-public class ApplicationTest implements BaseWebTest {
+public class ApplicationTest implements SampleWebTest {
 
     @Autowired
     TestRestTemplate restTemplate;

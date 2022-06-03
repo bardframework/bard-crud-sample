@@ -1,6 +1,8 @@
-package org.bardframework.crud.sample.common;
+package org.bardframework.crud.sample.base;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.bardframework.crud.api.base.RestControllerTest;
+import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
 import org.bardframework.crud.sample.common.base.SampleModelAbstract;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 @AutoConfigureMockMvc
-public abstract class RestControllerTestAbstract<M extends SampleModelAbstract, C extends SampleCriteriaAbstract, D, P extends DataProviderServiceAbstract<M, C, D, ?, ?>> implements org.bardframework.crud.api.base.RestControllerTestAbstract<M, C, D, P, String, User>, BaseWebTest {
+public abstract class SampleRestControllerTest<M extends SampleModelAbstract, C extends SampleCriteriaAbstract, D, P extends SampleDataProviderService<M, C, D, ?, ?>> implements RestControllerTest<M, C, D, P, String, SampleUser>, SampleWebTest {
 
     @Autowired
     private P dataProvider;
@@ -20,11 +22,6 @@ public abstract class RestControllerTestAbstract<M extends SampleModelAbstract, 
     private MockMvc mockMvc;
     @Autowired
     private TestRestTemplate restTemplate;
-
-    @Override
-    public User getUser() {
-        return DataProviderUtils.getUser();
-    }
 
     @Override
     public P getDataProvider() {

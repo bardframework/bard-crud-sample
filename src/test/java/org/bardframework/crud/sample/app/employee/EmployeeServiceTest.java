@@ -1,16 +1,7 @@
 package org.bardframework.crud.sample.app.employee;
 
-import org.bardframework.crud.sample.common.ServiceTestAbstract;
+import org.bardframework.crud.sample.base.SampleServiceTest;
 
-class EmployeeServiceTest extends ServiceTestAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeDataProvider> {
+class EmployeeServiceTest extends SampleServiceTest<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeDataProvider> {
 
-    @Override
-    public void testGetOne() {
-
-    }
-
-    @Override
-    public void testDeleteByCriteria() {
-
-    }
 }
