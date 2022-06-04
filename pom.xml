@@ -33,7 +33,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
         <dockerfile.tag>${project.version}</dockerfile.tag>
-        <dockerfile.baseImage>openjdk:17-alpine</dockerfile.baseImage>
+        <dockerfile.baseImage>eclipse-temurin:17-jre-alpine</dockerfile.baseImage>
     </properties>
 
     <dependencies>
@@ -163,6 +163,13 @@
             <artifactId>crud-api</artifactId>
             <version>${bardframework.crud.version}</version>
             <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.bardframework.commons</groupId>
+            <artifactId>common-web</artifactId>
+            <scope>test</scope>
+            <type>test-jar</type>
+            <version>${bardframework.commons.version}</version>
         </dependency>
     </dependencies>
 
