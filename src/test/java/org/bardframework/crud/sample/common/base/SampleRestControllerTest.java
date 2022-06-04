@@ -1,7 +1,6 @@
 package org.bardframework.crud.sample.common.base;
 
-import org.bardframework.crud.api.base.DataProviderService;
-import org.bardframework.crud.api.base.RestControllerTest;
+import org.bardframework.crud.api.base.BaseRestControllerTest;
 
-public class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, String, ?>> extends RestControllerTest<CL, P, String> implements SampleWebTest {
+public class SampleRestControllerTest extends BaseRestControllerTest implements SampleWebTest {
 }

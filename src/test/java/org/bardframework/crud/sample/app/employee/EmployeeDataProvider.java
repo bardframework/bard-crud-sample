@@ -32,9 +32,8 @@ public class EmployeeDataProvider extends SampleDataProviderService<EmployeeMode
     }
 
     @Override
-    public EmployeeDto makeInvalid(EmployeeDto dto) {
+    public void makeInvalid(EmployeeDto dto) {
         dto.setFirstName(RandomStringUtils.randomAlphabetic(500));
-        return dto;
     }
 
     @Override
@@ -46,9 +45,8 @@ public class EmployeeDataProvider extends SampleDataProviderService<EmployeeMode
     }
 
     @Override
-    public EmployeeModel makeInvalid(EmployeeModel model) {
+    public void makeInvalid(EmployeeModel model) {
         model.setEmail(null);
-        return model;
     }
 
     @Override

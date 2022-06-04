@@ -5,13 +5,13 @@ import org.bardframework.crud.api.base.PagedData;
 import org.bardframework.crud.api.base.ReadRestControllerTest;
 import org.bardframework.crud.api.base.WriteRestControllerTest;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.crud.sample.common.base.SampleRestControllerTest;
+import org.bardframework.crud.sample.common.base.SampleCrudControllerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-class EmployeeRestControllerTest extends SampleRestControllerTest<EmployeeRestController, EmployeeDataProvider> implements
+class EmployeeRestControllerTest extends SampleCrudControllerTest<EmployeeRestController, EmployeeDataProvider> implements
         ReadRestControllerTest<EmployeeModel, EmployeeCriteria, EmployeeDataProvider, String, SampleUser>,
         WriteRestControllerTest<EmployeeModel, EmployeeDto, EmployeeDataProvider, String, SampleUser> {
 
