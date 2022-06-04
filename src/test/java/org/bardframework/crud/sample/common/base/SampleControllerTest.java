@@ -6,7 +6,6 @@ import org.bardframework.crud.sample.runner.config.WebTestSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 @AutoConfigureMockMvc
 public abstract class SampleControllerTest implements WebTestHelper, WebTestSupport {
@@ -22,10 +21,5 @@ public abstract class SampleControllerTest implements WebTestHelper, WebTestSupp
 
     public ObjectMapper getObjectMapper() {
         return objectMapper;
-    }
-
-    @Override
-    public void setAuthentication(MockHttpServletRequestBuilder request) {
-
     }
 }

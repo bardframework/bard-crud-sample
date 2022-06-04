@@ -3,9 +3,10 @@ package org.bardframework.crud.sample.common.base;
 import org.bardframework.crud.api.base.DataProviderService;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-public class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, String, ?>> extends SampleControllerTest {
+public abstract class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, String, ?>> extends SampleControllerTest {
 
     @Autowired
     private P dataProvider;
@@ -26,5 +27,12 @@ public class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?,
 
     public String GET_URL(String id) {
         return BASE_URL() + "/" + id;
+    }
+
+    @Override
+    public void preExecute(MockHttpServletRequestBuilder request) {
+        /*
+            Set authentication headers here!
+         */
     }
 }
