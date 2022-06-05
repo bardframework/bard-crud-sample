@@ -15,10 +15,12 @@ public abstract class SampleControllerTest implements WebTestHelper, WebTestSupp
     @Autowired
     private MockMvc mockMvc;
 
+    @Override
     public MockMvc getMockMvc() {
         return mockMvc;
     }
 
+    @Override
     public ObjectMapper getObjectMapper() {
         return objectMapper;
     }
