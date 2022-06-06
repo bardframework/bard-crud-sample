@@ -44,7 +44,7 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected <C extends StoreClause<C>> C toClause(C clause, GenderModel model, SampleUser user) {
+    protected <C extends StoreClause<C>> void toClause(C clause, GenderModel model, SampleUser user) {
         throw new IllegalStateException("not supported");
 
     }
