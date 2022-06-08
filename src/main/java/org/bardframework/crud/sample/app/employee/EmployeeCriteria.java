@@ -1,7 +1,7 @@
 package org.bardframework.crud.sample.app.employee;
 
-import org.bardframework.crud.api.filter.StringFilter;
 import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
+import org.bardframework.form.filter.StringFilter;
 
 public class EmployeeCriteria extends SampleCriteriaAbstract {
 
