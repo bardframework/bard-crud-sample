@@ -12,10 +12,11 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.mvc.method.annotation.GenericRequestBodyResolverConfiguration;
 
 @SpringBootApplication(exclude = {ErrorMvcAutoConfiguration.class, ValidationAutoConfiguration.class, JacksonAutoConfiguration.class, DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class})
 @ComponentScan(basePackages = {"org.bardframework.crud.sample"}, excludeFilters = {@ComponentScan.Filter(value = {Configuration.class})})
-@Import({AppConfiguration.class, QueryDslConfiguration.class, WebConfiguration.class, SecurityConfiguration.class, JacksonConfiguration.class, ConfigsConfiguration.class})
+@Import({AppConfiguration.class, QueryDslConfiguration.class, WebConfiguration.class, GenericRequestBodyResolverConfiguration.class, SecurityConfiguration.class, JacksonConfiguration.class, ConfigsConfiguration.class})
 public class Application {
 
     public static void main(String[] args) {
