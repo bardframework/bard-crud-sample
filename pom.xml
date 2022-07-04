@@ -12,7 +12,7 @@
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>1.3.27</version>
+    <version>1.4.7</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
@@ -20,11 +20,11 @@
     <properties>
         <!-- versions -->
         <bardframework.commons.version>1.3.26</bardframework.commons.version>
-        <bardframework.crud.version>1.3.27</bardframework.crud.version>
+        <bardframework.crud.version>1.4.7</bardframework.crud.version>
         <bardframework.validator.version>1.3.30</bardframework.validator.version>
         <!-- plugin versions -->
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
+        <dockerfile-maven-plugin.version>1.4.93</dockerfile-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <!-- variables -->
