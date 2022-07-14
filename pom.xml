@@ -24,7 +24,7 @@
         <bardframework.validator.version>1.4.10</bardframework.validator.version>
         <!-- plugin versions -->
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-        <dockerfile-maven-plugin.version>1.4.93</dockerfile-maven-plugin.version>
+        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <!-- variables -->
