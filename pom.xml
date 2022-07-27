@@ -12,7 +12,7 @@
 
     <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>1.4.17</version>
+    <version>1.4.27</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
@@ -20,7 +20,7 @@
     <properties>
         <!-- versions -->
         <bardframework.commons.version>1.4.16</bardframework.commons.version>
-        <bardframework.crud.version>1.4.17</bardframework.crud.version>
+        <bardframework.crud.version>1.4.27</bardframework.crud.version>
         <bardframework.validator.version>1.4.20</bardframework.validator.version>
         <!-- plugin versions -->
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
