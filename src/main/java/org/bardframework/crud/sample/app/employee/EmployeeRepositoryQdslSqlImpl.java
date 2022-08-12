@@ -46,11 +46,16 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected <C extends StoreClause<C>> void toClause(C clause, EmployeeModel model, SampleUser user) {
+    protected <C extends StoreClause<C>> void onSave(C clause, EmployeeModel model, SampleUser user) {
         clause.set(tbEmployee.email, model.getEmail());
         clause.set(tbEmployee.firstName, model.getFirstName());
         clause.set(tbEmployee.lastName, model.getLastName());
         clause.set(tbEmployee.description, model.getDescription());
+    }
+
+    @Override
+    protected <T extends StoreClause<T>> void onUpdate(T clause, EmployeeModel model, SampleUser user) {
+        this.onSave(clause, model, user);
     }
 
     @Override
