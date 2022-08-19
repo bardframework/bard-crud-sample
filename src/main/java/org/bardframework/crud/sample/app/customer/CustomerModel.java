@@ -1,6 +1,8 @@
-package org.bardframework.crud.sample.app.employee;
+package org.bardframework.crud.sample.app.customer;
 
-public class EmployeeDto {
+import org.bardframework.crud.sample.common.base.SampleModelAbstract;
+
+public class CustomerModel extends SampleModelAbstract {
     private String email;
     private String firstName;
     private String lastName;

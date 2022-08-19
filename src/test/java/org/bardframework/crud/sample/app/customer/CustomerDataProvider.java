@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.app.employee;
+package org.bardframework.crud.sample.app.customer;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.assertj.core.api.Assertions;
@@ -7,15 +7,15 @@ import org.bardframework.crud.sample.common.base.SampleDataProviderService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeDataProvider extends SampleDataProviderService<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeService, EmployeeRepository> {
+public class CustomerDataProvider extends SampleDataProviderService<CustomerModel, CustomerCriteria, CustomerDto, CustomerService, CustomerRepository> {
 
-    public EmployeeDataProvider(EmployeeService service) {
+    public CustomerDataProvider(CustomerService service) {
         super(service);
     }
 
     @Override
-    public EmployeeDto getDto() {
-        EmployeeDto dto = new EmployeeDto();
+    public CustomerDto getDto() {
+        CustomerDto dto = new CustomerDto();
         dto.setEmail(RandomStringUtils.randomAlphabetic(1, 10));
         dto.setFirstName(RandomStringUtils.randomAlphabetic(1, 10));
         dto.setLastName(RandomStringUtils.randomAlphabetic(1, 10));
@@ -24,7 +24,7 @@ public class EmployeeDataProvider extends SampleDataProviderService<EmployeeMode
     }
 
     @Override
-    public void assertEqualUpdate(EmployeeModel model, EmployeeDto dto) {
+    public void assertEqualUpdate(CustomerModel model, CustomerDto dto) {
         Assertions.assertThat(model.getEmail()).isEqualTo(dto.getEmail());
         Assertions.assertThat(model.getDescription()).isEqualTo(dto.getDescription());
         Assertions.assertThat(model.getFirstName()).isEqualTo(dto.getFirstName());
@@ -32,12 +32,12 @@ public class EmployeeDataProvider extends SampleDataProviderService<EmployeeMode
     }
 
     @Override
-    public void makeInvalid(EmployeeDto dto) {
+    public void makeInvalid(CustomerDto dto) {
         dto.setFirstName(RandomStringUtils.randomAlphabetic(500));
     }
 
     @Override
-    public void assertEqualUpdate(EmployeeModel first, EmployeeModel second) {
+    public void assertEqualUpdate(CustomerModel first, CustomerModel second) {
         Assertions.assertThat(first.getEmail()).isEqualTo(second.getEmail());
         Assertions.assertThat(first.getDescription()).isEqualTo(second.getDescription());
         Assertions.assertThat(first.getFirstName()).isEqualTo(second.getFirstName());
@@ -45,12 +45,12 @@ public class EmployeeDataProvider extends SampleDataProviderService<EmployeeMode
     }
 
     @Override
-    public void makeInvalid(EmployeeModel model) {
+    public void makeInvalid(CustomerModel model) {
         model.setEmail(null);
     }
 
     @Override
-    public boolean isDuplicate(EmployeeModel first, EmployeeModel second, SampleUser user) {
+    public boolean isDuplicate(CustomerModel first, CustomerModel second, SampleUser user) {
         return false;
     }
 }

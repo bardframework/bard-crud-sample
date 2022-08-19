@@ -1,19 +1,19 @@
-package org.bardframework.crud.sample.app.employee;
+package org.bardframework.crud.sample.app.customer;
 
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleServiceAbstract;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeService extends SampleServiceAbstract<EmployeeModel, EmployeeCriteria, EmployeeDto, EmployeeRepository> {
+public class CustomerService extends SampleServiceAbstract<CustomerModel, CustomerCriteria, CustomerDto, CustomerRepository> {
 
-    public EmployeeService(EmployeeRepository repository) {
+    public CustomerService(CustomerRepository repository) {
         super(repository);
     }
 
     @Override
-    protected EmployeeModel onSave(EmployeeDto dto, SampleUser user) {
-        EmployeeModel model = new EmployeeModel();
+    protected CustomerModel onSave(CustomerDto dto, SampleUser user) {
+        CustomerModel model = new CustomerModel();
         model.setEmail(dto.getEmail());
         model.setFirstName(dto.getFirstName());
         model.setLastName(dto.getLastName());
@@ -22,7 +22,7 @@ public class EmployeeService extends SampleServiceAbstract<EmployeeModel, Employ
     }
 
     @Override
-    protected void onUpdate(EmployeeDto dto, EmployeeModel model, SampleUser user) {
+    protected void onUpdate(CustomerDto dto, CustomerModel model, SampleUser user) {
         model.setEmail(dto.getEmail());
         model.setFirstName(dto.getFirstName());
         model.setLastName(dto.getLastName());

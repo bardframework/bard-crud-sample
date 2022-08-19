@@ -6,8 +6,9 @@ import com.querydsl.core.types.dsl.NumberPath;
 import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.ColumnMetadata;
 
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import java.sql.Types;
+import java.util.Arrays;
 
 import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
@@ -25,6 +26,10 @@ public class QTbGender extends com.querydsl.sql.RelationalPathBase<QTbGender> {
     public final NumberPath<Integer> order = createNumber("order", Integer.class);
 
     public final StringPath title = createString("title");
+
+    public final com.querydsl.sql.PrimaryKey<QTbGender> primary = createPrimaryKey(id);
+
+    public final com.querydsl.sql.ForeignKey<QTbCustomer> _tbCustomerFkGender = createInvForeignKey(Arrays.asList(id, id), Arrays.asList("gender_id", "gender_id"));
 
     public QTbGender(String variable) {
         super(QTbGender.class, forVariable(variable), "null", "tb_gender");

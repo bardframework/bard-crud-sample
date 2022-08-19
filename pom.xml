@@ -197,7 +197,6 @@
                 <configuration>
                     <excludes>
                         <exclude>develop-configuration/**</exclude>
-                        <exclude>unused/**</exclude>
                         <exclude>*.xml</exclude>
                     </excludes>
                 </configuration>
@@ -225,12 +224,11 @@
                 <artifactId>querydsl-maven-plugin</artifactId>
                 <version>${querydsl.version}</version>
                 <configuration>
-                    <skip>true</skip>
                     <jdbcDriver>${database.driver_class_name}</jdbcDriver>
                     <jdbcUrl>${database.url}</jdbcUrl>
                     <jdbcUser>${database.username}</jdbcUser>
                     <jdbcPassword>${database.password}</jdbcPassword>
-                    <packageName>org.bardframework.crud.common.entity</packageName>
+                    <packageName>org.bardframework.crud.sample.common.entity</packageName>
                     <targetFolder>${project.basedir}/src/main/java/</targetFolder>
                     <sourceFolder/>
                     <customTypes>

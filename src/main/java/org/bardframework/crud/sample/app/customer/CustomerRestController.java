@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.app.employee;
+package org.bardframework.crud.sample.app.customer;
 
 import org.bardframework.crud.api.base.ReadRestController;
 import org.bardframework.crud.api.base.WriteRestController;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "employee", produces = APPLICATION_JSON_VALUE)
-public class EmployeeRestController extends
-        SampleRestControllerAbstract<EmployeeService> implements
-        ReadRestController<EmployeeModel, EmployeeCriteria, EmployeeService, String, SampleUser>,
-        WriteRestController<EmployeeModel, EmployeeDto, EmployeeService, String, SampleUser> {
+@RequestMapping(value = "customer", produces = APPLICATION_JSON_VALUE)
+public class CustomerRestController extends
+        SampleRestControllerAbstract<CustomerService> implements
+        ReadRestController<CustomerModel, CustomerCriteria, CustomerService, String, SampleUser>,
+        WriteRestController<CustomerModel, CustomerDto, CustomerService, String, SampleUser> {
 
-    protected EmployeeRestController(EmployeeService service) {
+    protected CustomerRestController(CustomerService service) {
         super(service);
     }
 }

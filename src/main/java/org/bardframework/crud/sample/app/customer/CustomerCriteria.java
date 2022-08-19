@@ -1,9 +1,9 @@
-package org.bardframework.crud.sample.app.employee;
+package org.bardframework.crud.sample.app.customer;
 
 import org.bardframework.crud.sample.common.base.SampleCriteriaAbstract;
 import org.bardframework.form.model.filter.StringFilter;
 
-public class EmployeeCriteria extends SampleCriteriaAbstract {
+public class CustomerCriteria extends SampleCriteriaAbstract {
 
     private StringFilter searchQuery;
 
