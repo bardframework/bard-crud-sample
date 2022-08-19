@@ -8,7 +8,9 @@ import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.runner.config.NonWebTestSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class SampleServiceTest<M extends BaseModel<I>, C extends BaseCriteria<I>, D, S extends BaseService<M, C, D, ?, I, SampleUser>, P extends SampleDataProviderService<M, C, D, S, ?, I>, I extends Comparable<? super I>> implements BaseServiceTest<M, C, D, S, P, I, SampleUser>, NonWebTestSupport {
+import java.io.Serializable;
+
+public abstract class SampleServiceTest<M extends BaseModel<I>, C extends BaseCriteria<I>, D, S extends BaseService<M, C, D, ?, I, SampleUser>, P extends SampleDataProviderService<M, C, D, S, ?, I>, I extends Serializable> implements BaseServiceTest<M, C, D, S, P, I, SampleUser>, NonWebTestSupport {
 
     @Autowired
     private S service;
