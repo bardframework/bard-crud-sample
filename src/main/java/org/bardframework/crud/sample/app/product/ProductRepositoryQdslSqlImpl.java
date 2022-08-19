@@ -10,7 +10,6 @@ import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.base.BaseRepositoryQdslSqlAbstract;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.form.model.filter.IdFilter;
 import org.springframework.stereotype.Repository;
 
 import static org.bardframework.crud.sample.common.entity.QTbProduct.tbProduct;
@@ -31,13 +30,8 @@ public class ProductRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<
     @Override
     protected Predicate getPredicate(ProductCriteria criteria, SampleUser user) {
         BooleanBuilder builder = new BooleanBuilder();
-        builder.orAllOf(QueryDslUtils.getPredicate(criteria.getPriceFilter(), tbProduct.price));
+        builder.and(QueryDslUtils.getPredicate(criteria.getPriceFilter(), tbProduct.price));
         return builder;
-    }
-
-    @Override
-    protected Predicate getPredicate(IdFilter<Integer> idFilter, SampleUser user) {
-        return QueryDslUtils.getPredicate(idFilter, tbProduct.id);
     }
 
     @Override
@@ -46,12 +40,12 @@ public class ProductRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<
     }
 
     @Override
-    protected QBean<ProductModel> getQBean() {
+    protected QBean<ProductModel> getSelectExpression() {
         return Q_BEAN;
     }
 
     @Override
-    protected Expression<Integer> getIdPath() {
+    protected Expression<Integer> getIdSelectExpression() {
         return tbProduct.id;
     }
 

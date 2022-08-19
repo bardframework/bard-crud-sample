@@ -48,12 +48,12 @@ public class OrderRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<Or
     }
 
     @Override
-    protected QBean<OrderModel> getQBean() {
+    protected Expression<OrderModel> getSelectExpression() {
         return Q_BEAN;
     }
 
     @Override
-    protected Expression<OrderModel.OrderKey> getIdPath() {
+    protected Expression<OrderModel.OrderKey> getIdSelectExpression() {
         return Q_BEAN_ID;
     }
 

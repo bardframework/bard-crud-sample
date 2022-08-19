@@ -10,7 +10,6 @@ import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
-import org.bardframework.form.model.filter.IdFilter;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -40,22 +39,17 @@ public class CustomerRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected Predicate getPredicate(IdFilter<String> idFilter, SampleUser user) {
-        return QueryDslUtils.getPredicate(idFilter, tbCustomer.id);
-    }
-
-    @Override
     protected RelationalPathBase<?> getEntity() {
         return tbCustomer;
     }
 
     @Override
-    protected QBean<CustomerModel> getQBean() {
+    protected QBean<CustomerModel> getSelectExpression() {
         return Q_BEAN;
     }
 
     @Override
-    protected Expression<String> getIdPath() {
+    protected Expression<String> getIdSelectExpression() {
         return tbCustomer.id;
     }
 

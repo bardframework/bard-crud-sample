@@ -10,7 +10,6 @@ import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
-import org.bardframework.form.model.filter.IdFilter;
 import org.springframework.stereotype.Repository;
 
 import static org.bardframework.crud.sample.common.entity.QTbGender.tbGender;
@@ -36,22 +35,17 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected Predicate getPredicate(IdFilter<String> idFilter, SampleUser user) {
-        return QueryDslUtils.getPredicate(idFilter, tbGender.id);
-    }
-
-    @Override
     protected RelationalPathBase<?> getEntity() {
         return tbGender;
     }
 
     @Override
-    protected QBean<GenderModel> getQBean() {
+    protected QBean<GenderModel> getSelectExpression() {
         return Q_BEAN;
     }
 
     @Override
-    protected Expression<String> getIdPath() {
+    protected Expression<String> getIdSelectExpression() {
         return tbGender.id;
     }
 
