@@ -1,14 +1,16 @@
 package org.bardframework.crud.sample.app.employee;
 
+import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.dml.StoreClause;
+import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.QBean;
-import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
-import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
+import org.bardframework.form.model.filter.IdFilter;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -31,8 +33,15 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected void setCriteria(EmployeeCriteria criteria, SQLQuery<?> query, SampleUser user) {
-        QueryDslUtils.applyFilter(query, criteria.getSearchQuery(), tbEmployee.lastName);
+    protected Predicate getPredicate(EmployeeCriteria criteria, SampleUser user) {
+        BooleanBuilder builder = new BooleanBuilder();
+        builder.orAllOf(QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbEmployee.firstName), QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbEmployee.lastName));
+        return builder;
+    }
+
+    @Override
+    protected Predicate getPredicate(IdFilter<String> idFilter, SampleUser user) {
+        return QueryDslUtils.getPredicate(idFilter, tbEmployee.id);
     }
 
     @Override
@@ -46,7 +55,18 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
+    protected Expression<String> getIdPath() {
+        return tbEmployee.id;
+    }
+
+    @Override
     protected <C extends StoreClause<C>> void onSave(C clause, EmployeeModel model, SampleUser user) {
+        clause.set(tbEmployee.id, model.getId());
+        this.onUpdate(clause, model, user);
+    }
+
+    @Override
+    protected <T extends StoreClause<T>> void onUpdate(T clause, EmployeeModel model, SampleUser user) {
         clause.set(tbEmployee.email, model.getEmail());
         clause.set(tbEmployee.firstName, model.getFirstName());
         clause.set(tbEmployee.lastName, model.getLastName());
@@ -54,17 +74,7 @@ public class EmployeeRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     }
 
     @Override
-    protected <T extends StoreClause<T>> void onUpdate(T clause, EmployeeModel model, SampleUser user) {
-        this.onSave(clause, model, user);
-    }
-
-    @Override
-    protected void setIdentifier(EmployeeModel model, SampleUser user) {
-        model.setId(UUID.randomUUID().toString());
-    }
-
-    @Override
-    public StringPath getIdentifierPath() {
-        return tbEmployee.id;
+    protected String generateId(EmployeeModel model, SampleUser user) {
+        return UUID.randomUUID().toString();
     }
 }

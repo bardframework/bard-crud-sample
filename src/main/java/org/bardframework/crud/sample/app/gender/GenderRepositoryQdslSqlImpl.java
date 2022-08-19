@@ -1,14 +1,16 @@
 package org.bardframework.crud.sample.app.gender;
 
+import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.dml.StoreClause;
+import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.QBean;
-import com.querydsl.core.types.dsl.StringPath;
 import com.querydsl.sql.RelationalPathBase;
-import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import org.bardframework.crud.impl.querydsl.utils.QueryDslUtils;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRepositoryQdslSqlAbstract;
+import org.bardframework.form.model.filter.IdFilter;
 import org.springframework.stereotype.Repository;
 
 import static org.bardframework.crud.sample.common.entity.QTbGender.tbGender;
@@ -27,10 +29,15 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected void setCriteria(GenderCriteria criteria, SQLQuery<?> query, SampleUser user) {
-        if (null != criteria.getSearchQuery()) {
-            query.where(tbGender.title.like('%' + criteria.getSearchQuery() + '%'));
-        }
+    protected Predicate getPredicate(GenderCriteria criteria, SampleUser user) {
+        BooleanBuilder builder = new BooleanBuilder();
+        builder.and(QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbGender.title));
+        return builder;
+    }
+
+    @Override
+    protected Predicate getPredicate(IdFilter<String> idFilter, SampleUser user) {
+        return QueryDslUtils.getPredicate(idFilter, tbGender.id);
     }
 
     @Override
@@ -44,9 +51,13 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
+    protected Expression<String> getIdPath() {
+        return tbGender.id;
+    }
+
+    @Override
     protected <C extends StoreClause<C>> void onSave(C clause, GenderModel model, SampleUser user) {
         throw new IllegalStateException("not supported");
-
     }
 
     @Override
@@ -55,12 +66,7 @@ public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract
     }
 
     @Override
-    protected void setIdentifier(GenderModel model, SampleUser user) {
-        throw new IllegalStateException("not supported");
-    }
-
-    @Override
-    public StringPath getIdentifierPath() {
-        return tbGender.id;
+    protected String generateId(GenderModel model, SampleUser user) {
+        return model.getId();
     }
 }
