@@ -5,7 +5,7 @@ import org.bardframework.crud.sample.common.base.SampleServiceAbstract;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GenderService extends SampleServiceAbstract<GenderModel, GenderCriteria, Object, GenderRepository> {
+public class GenderService extends SampleServiceAbstract<GenderModel, GenderCriteria, Object, GenderRepository, String> {
 
     public GenderService(GenderRepository repository) {
         super(repository);

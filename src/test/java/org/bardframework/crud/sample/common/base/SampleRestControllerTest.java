@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-public abstract class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, String, ?>> extends SampleControllerTest {
+public abstract class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, I, ?>, I extends Comparable<? super I>> extends SampleControllerTest {
 
     @Autowired
     private P dataProvider;
@@ -25,7 +25,7 @@ public abstract class SampleRestControllerTest<CL, P extends DataProviderService
         return "/" + AopProxyUtils.ultimateTargetClass(this.getController()).getAnnotation(RequestMapping.class).value()[0];
     }
 
-    public String GET_URL(String id) {
+    public String GET_URL(I id) {
         return BASE_URL() + "/" + id;
     }
 

@@ -18,7 +18,7 @@ import java.util.UUID;
 import static org.bardframework.crud.sample.common.entity.QTbCustomer.tbCustomer;
 
 @Repository
-public class CustomerRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<CustomerModel, CustomerCriteria> implements CustomerRepository {
+public class CustomerRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<CustomerModel, CustomerCriteria, String> implements CustomerRepository {
 
     private static final QBean<CustomerModel> Q_BEAN = QueryDslUtils.bean(CustomerModel.class,
             tbCustomer.id,

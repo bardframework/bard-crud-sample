@@ -5,7 +5,7 @@ import org.bardframework.crud.sample.common.base.SampleServiceAbstract;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerService extends SampleServiceAbstract<CustomerModel, CustomerCriteria, CustomerDto, CustomerRepository> {
+public class CustomerService extends SampleServiceAbstract<CustomerModel, CustomerCriteria, CustomerDto, CustomerRepository, String> {
 
     public CustomerService(CustomerRepository repository) {
         super(repository);

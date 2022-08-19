@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import static org.bardframework.crud.sample.common.entity.QTbGender.tbGender;
 
 @Repository
-public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<GenderModel, GenderCriteria> implements GenderRepository {
+public class GenderRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstract<GenderModel, GenderCriteria, String> implements GenderRepository {
 
     private static final QBean<GenderModel> Q_BEAN = QueryDslUtils.bean(GenderModel.class,
             tbGender.id,

@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.app.customer;
 
-import org.bardframework.crud.sample.common.base.SampleModelAbstract;
+import org.bardframework.crud.api.base.BaseModelAbstract;
 
-public class CustomerModel extends SampleModelAbstract {
+public class CustomerModel extends BaseModelAbstract<String> {
     private String email;
     private String firstName;
     private String lastName;

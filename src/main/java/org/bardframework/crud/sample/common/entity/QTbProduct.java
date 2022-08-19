@@ -18,13 +18,15 @@ import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 @Generated("com.querydsl.sql.codegen.MetaDataSerializer")
 public class QTbProduct extends com.querydsl.sql.RelationalPathBase<QTbProduct> {
 
-    public static final QTbProduct tbProduct = new QTbProduct("tb_product");
     private static final long serialVersionUID = 1406629431;
+
+    public static final QTbProduct tbProduct = new QTbProduct("tb_product");
+
     public final NumberPath<Integer> id = createNumber("id", Integer.class);
 
     public final StringPath name = createString("name");
 
-    public final NumberPath<java.math.BigDecimal> price = createNumber("price", java.math.BigDecimal.class);
+    public final NumberPath<Double> price = createNumber("price", Double.class);
 
     public final com.querydsl.sql.PrimaryKey<QTbProduct> primary = createPrimaryKey(id);
 
@@ -58,7 +60,7 @@ public class QTbProduct extends com.querydsl.sql.RelationalPathBase<QTbProduct> 
     public void addMetadata() {
         addMetadata(id, ColumnMetadata.named("id").withIndex(1).ofType(Types.INTEGER).withSize(10).notNull());
         addMetadata(name, ColumnMetadata.named("name").withIndex(2).ofType(Types.VARCHAR).withSize(100).notNull());
-        addMetadata(price, ColumnMetadata.named("price").withIndex(3).ofType(Types.DECIMAL).withSize(50).withDigits(2));
+        addMetadata(price, ColumnMetadata.named("price").withIndex(3).ofType(Types.DOUBLE).withSize(22).notNull());
     }
 
 }

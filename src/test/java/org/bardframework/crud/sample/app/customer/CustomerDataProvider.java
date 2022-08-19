@@ -7,7 +7,7 @@ import org.bardframework.crud.sample.common.base.SampleDataProviderService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerDataProvider extends SampleDataProviderService<CustomerModel, CustomerCriteria, CustomerDto, CustomerService, CustomerRepository> {
+public class CustomerDataProvider extends SampleDataProviderService<CustomerModel, CustomerCriteria, CustomerDto, CustomerService, CustomerRepository, String> {
 
     public CustomerDataProvider(CustomerService service) {
         super(service);
@@ -16,7 +16,7 @@ public class CustomerDataProvider extends SampleDataProviderService<CustomerMode
     @Override
     public CustomerDto getDto() {
         CustomerDto dto = new CustomerDto();
-        dto.setEmail(RandomStringUtils.randomAlphabetic(1, 10));
+        dto.setEmail(RandomStringUtils.randomAlphabetic(10, 30));
         dto.setFirstName(RandomStringUtils.randomAlphabetic(1, 10));
         dto.setLastName(RandomStringUtils.randomAlphabetic(1, 10));
         dto.setDescription(RandomStringUtils.randomAlphanumeric(0, 100));
@@ -34,6 +34,11 @@ public class CustomerDataProvider extends SampleDataProviderService<CustomerMode
     @Override
     public void makeInvalid(CustomerDto dto) {
         dto.setFirstName(RandomStringUtils.randomAlphabetic(500));
+    }
+
+    @Override
+    public String getInvalidId() {
+        return RandomStringUtils.randomAlphanumeric(100, 200);
     }
 
     @Override

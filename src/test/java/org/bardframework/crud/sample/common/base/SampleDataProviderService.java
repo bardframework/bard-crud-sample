@@ -2,12 +2,12 @@ package org.bardframework.crud.sample.common.base;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.bardframework.commons.utils.ReflectionUtils;
-import org.bardframework.crud.api.base.DataProviderService;
+import org.bardframework.crud.api.base.*;
 import org.bardframework.crud.sample.common.SampleUser;
 
 import java.util.UUID;
 
-public abstract class SampleDataProviderService<M extends SampleModelAbstract, C extends SampleCriteriaAbstract, D, S extends SampleServiceAbstract<M, C, D, R>, R extends SampleRepository<M, C>> implements DataProviderService<M, C, D, S, R, String, SampleUser> {
+public abstract class SampleDataProviderService<M extends BaseModel<I>, C extends BaseCriteria<I>, D, S extends BaseService<M, C, D, R, I, SampleUser>, R extends BaseRepository<M, C, I, SampleUser>, I extends Comparable<? super I>> implements DataProviderService<M, C, D, S, R, I, SampleUser> {
 
     private final S service;
     private final Class<C> criteriaClazz;
@@ -30,10 +30,5 @@ public abstract class SampleDataProviderService<M extends SampleModelAbstract, C
     @Override
     public SampleUser getUser() {
         return new SampleUser(UUID.randomUUID().toString(), RandomStringUtils.randomAlphabetic(50));
-    }
-
-    @Override
-    public String getInvalidId() {
-        return RandomStringUtils.randomAlphanumeric(100, 200);
     }
 }

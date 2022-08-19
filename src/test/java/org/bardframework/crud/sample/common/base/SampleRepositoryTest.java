@@ -1,12 +1,11 @@
 package org.bardframework.crud.sample.common.base;
 
-import org.bardframework.crud.api.base.BaseRepositoryTest;
-import org.bardframework.crud.api.base.DataProviderRepository;
+import org.bardframework.crud.api.base.*;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.runner.config.NonWebTestSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class SampleRepositoryTest<M extends SampleModelAbstract, C extends SampleCriteriaAbstract, R extends SampleRepository<M, C>, P extends DataProviderRepository<M, C, R, String, SampleUser>> implements BaseRepositoryTest<M, C, R, P, String, SampleUser>, NonWebTestSupport {
+public abstract class SampleRepositoryTest<M extends BaseModel<I>, C extends BaseCriteria<I>, R extends BaseRepository<M, C, I, SampleUser>, P extends DataProviderRepository<M, C, R, I, SampleUser>, I extends Comparable<? super I>> implements BaseRepositoryTest<M, C, R, P, I, SampleUser>, NonWebTestSupport {
 
     @Autowired
     private R repository;

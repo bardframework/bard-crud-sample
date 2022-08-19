@@ -1,8 +1,8 @@
 package org.bardframework.crud.sample.app.gender;
 
-import org.bardframework.crud.sample.common.base.SampleModelAbstract;
+import org.bardframework.crud.api.base.BaseModelAbstract;
 
-public class GenderModel extends SampleModelAbstract {
+public class GenderModel extends BaseModelAbstract<String> {
     private String title;
     private int order;
 

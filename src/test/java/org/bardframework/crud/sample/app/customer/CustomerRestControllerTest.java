@@ -7,7 +7,7 @@ import org.bardframework.crud.api.base.WriteRestControllerTest;
 import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleRestControllerTest;
 
-class CustomerRestControllerTest extends SampleRestControllerTest<CustomerRestController, CustomerDataProvider> implements
+class CustomerRestControllerTest extends SampleRestControllerTest<CustomerRestController, CustomerDataProvider, String> implements
         ReadRestControllerTest<CustomerModel, CustomerCriteria, CustomerDataProvider, String, SampleUser>,
         WriteRestControllerTest<CustomerModel, CustomerDto, CustomerDataProvider, String, SampleUser> {
 
