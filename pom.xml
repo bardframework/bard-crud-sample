@@ -4,33 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.7.2</version>
+        <groupId>org.bardframework</groupId>
+        <artifactId>bard-bom</artifactId>
+        <version>1.5.25</version>
         <relativePath/>
     </parent>
 
-    <groupId>org.bardframework</groupId>
     <artifactId>bard-crud-sample</artifactId>
-    <version>1.5.17</version>
     <packaging>jar</packaging>
 
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <!-- versions -->
-        <bardframework.commons.version>1.5.16</bardframework.commons.version>
-        <bardframework.crud.version>1.5.17</bardframework.crud.version>
-        <bardframework.validator.version>1.5.20</bardframework.validator.version>
-        <!-- plugin versions -->
-        <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-        <!-- variables -->
-        <maven.compiler.release>11</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <start-class>org.bardframework.crud.sample.runner.Application</start-class>
         <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
         <dockerfile.tag>${project.version}</dockerfile.tag>
         <dockerfile.baseImage>eclipse-temurin:17-jre-alpine</dockerfile.baseImage>
@@ -52,37 +38,30 @@
         <dependency>
             <groupId>org.bardframework.validator</groupId>
             <artifactId>bard-validator</artifactId>
-            <version>${bardframework.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-spring-boot</artifactId>
-            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-swagger</artifactId>
-            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-config</artifactId>
-            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-monitoring</artifactId>
-            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-web</artifactId>
-            <version>${bardframework.commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-querydsl-sql</artifactId>
-            <version>${bardframework.crud.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -161,14 +140,12 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-api</artifactId>
-            <version>${bardframework.crud.version}</version>
             <scope>test</scope>
             <type>test-jar</type>
         </dependency>
         <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-web</artifactId>
-            <version>${bardframework.commons.version}</version>
             <scope>test</scope>
             <type>test-jar</type>
         </dependency>
@@ -179,17 +156,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>org.bardframework.crud.sample.runner.Application</mainClass>
-                    <layout>JAR</layout>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -204,7 +170,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>${properties-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -222,7 +187,6 @@
             <plugin>
                 <groupId>com.querydsl</groupId>
                 <artifactId>querydsl-maven-plugin</artifactId>
-                <version>${querydsl.version}</version>
                 <configuration>
                     <jdbcDriver>${database.driver_class_name}</jdbcDriver>
                     <jdbcUrl>${database.url}</jdbcUrl>
@@ -260,26 +224,14 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>${dockerfile-maven-plugin.version}</version>
-                <configuration>
-                    <dockerfile>Dockerfile</dockerfile>
-                    <repository>${dockerfile.repository}</repository>
-                    <tag>${dockerfile.tag}</tag>
-                    <buildArgs>
-                        <BASE_IMAGE>${dockerfile.baseImage}</BASE_IMAGE>
-                        <APP_VERSION>${project.version}</APP_VERSION>
-                    </buildArgs>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>${sonar-maven-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
