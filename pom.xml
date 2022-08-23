@@ -188,10 +188,10 @@
                 <groupId>com.querydsl</groupId>
                 <artifactId>querydsl-maven-plugin</artifactId>
                 <configuration>
-                    <jdbcDriver>${database.driver_class_name}</jdbcDriver>
-                    <jdbcUrl>${database.url}</jdbcUrl>
-                    <jdbcUser>${database.username}</jdbcUser>
-                    <jdbcPassword>${database.password}</jdbcPassword>
+                    <jdbcDriver>${spring.datasource.driver-class-name}</jdbcDriver>
+                    <jdbcUrl>${spring.datasource.url}</jdbcUrl>
+                    <jdbcUser>${spring.datasource.username}</jdbcUser>
+                    <jdbcPassword>${spring.datasource.password}</jdbcPassword>
                     <packageName>org.bardframework.crud.sample.common.entity</packageName>
                     <targetFolder>${project.basedir}/src/main/java/</targetFolder>
                     <sourceFolder/>
