@@ -26,7 +26,7 @@ public class CustomerDataProvider extends SampleDataProviderService<CustomerMode
     @Override
     public void assertEqualUpdate(CustomerModel model, CustomerDto dto) {
         Assertions.assertThat(model.getEmail()).isEqualTo(dto.getEmail());
-        Assertions.assertThat(model.getDescription()).isEqualTo(dto.getDescription());
+        Assertions.assertThat(model.getDescription()).isEqualToIgnoringWhitespace(dto.getDescription());
         Assertions.assertThat(model.getFirstName()).isEqualTo(dto.getFirstName());
         Assertions.assertThat(model.getLastName()).isEqualTo(dto.getLastName());
     }

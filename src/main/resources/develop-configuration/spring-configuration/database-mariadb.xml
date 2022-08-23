@@ -2,10 +2,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.zaxxer.hikari.HikariDataSource" destroy-method="close" id="dataSource"
-          p:connectionTimeout="#{30 * 1000}" p:driverClassName="${database.driver_class_name}"
-          p:jdbcUrl="${database.url}"
-          p:minimumIdle="10" p:password="${database.password}" p:username="${database.username}"/>
+    <bean class="org.bardframework.crud.sample.runner.config.QueryDslConfiguration"/>
 
     <bean class="com.querydsl.sql.MySQLTemplates" id="sqlTemplates"/>
 

@@ -7,11 +7,9 @@ import com.querydsl.sql.types.JSR310LocalDateType;
 import com.querydsl.sql.types.JSR310LocalTimeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
 public class QueryDslConfiguration {
 
     private com.querydsl.sql.Configuration querydslConfiguration(@Autowired SQLTemplates templates) {
