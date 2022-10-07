@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.bardframework</groupId>
         <artifactId>bard-bom</artifactId>
-        <version>1.6.15</version>
+        <version>1.7.10</version>
         <relativePath/>
     </parent>
 
@@ -50,6 +50,10 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-querydsl-sql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-sql-spring</artifactId>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -197,6 +201,8 @@
                     <sourceFolder/>
                     <customTypes>
                         <customType>com.querydsl.sql.types.JSR310LocalDateTimeType</customType>
+                        <customType>com.querydsl.sql.types.JSR310LocalDateType</customType>
+                        <customType>com.querydsl.sql.types.JSR310LocalTimeType</customType>
                     </customTypes>
                     <typeMappings/>
                 </configuration>
