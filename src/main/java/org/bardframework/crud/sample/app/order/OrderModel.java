@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.bardframework.crud.api.base.BaseModelAbstract;
+import org.springframework.core.convert.converter.Converter;
 
 import java.io.Serializable;
 
@@ -19,7 +20,7 @@ public class OrderModel extends BaseModelAbstract<OrderModel.OrderKey> {
         this.count = count;
     }
 
-    public static class OrderKey implements Serializable {
+    public static class OrderKey implements Converter<String, OrderKey>, Serializable {
         private String customerId;
         private Integer productId;
 
@@ -29,13 +30,6 @@ public class OrderModel extends BaseModelAbstract<OrderModel.OrderKey> {
         public OrderKey(String customerId, Integer productId) {
             this.customerId = customerId;
             this.productId = productId;
-        }
-
-        public static OrderKey fromString(String value) {
-            if (StringUtils.isBlank(value)) {
-                return null;
-            }
-            return new OrderKey(value.split(":")[0], Integer.parseInt(value.split(":")[1]));
         }
 
         public String getCustomerId() {
@@ -55,11 +49,6 @@ public class OrderModel extends BaseModelAbstract<OrderModel.OrderKey> {
         }
 
         @Override
-        public String toString() {
-            return String.format("%s:%d", this.customerId, this.productId);
-        }
-
-        @Override
         public boolean equals(Object other) {
             if (this == other) {
                 return true;
@@ -76,6 +65,19 @@ public class OrderModel extends BaseModelAbstract<OrderModel.OrderKey> {
         @Override
         public int hashCode() {
             return new HashCodeBuilder(17, 37).append(customerId).append(productId).toHashCode();
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s:%d", this.customerId, this.productId);
+        }
+
+        @Override
+        public OrderKey convert(String value) {
+            if (StringUtils.isBlank(value)) {
+                return null;
+            }
+            return new OrderKey(value.split(":")[0], Integer.parseInt(value.split(":")[1]));
         }
     }
 }

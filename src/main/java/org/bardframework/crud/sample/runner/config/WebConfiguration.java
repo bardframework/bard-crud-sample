@@ -7,7 +7,6 @@ import org.bardframework.crud.sample.runner.ExceptionControllerAdvice;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
-import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -21,14 +20,6 @@ public class WebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new OrderKeyConverter());
-    }
-
-    private static class OrderKeyConverter implements Converter<String, OrderModel.OrderKey> {
-
-        @Override
-        public OrderModel.OrderKey convert(String from) {
-            return OrderModel.OrderKey.fromString(from);
-        }
+        registry.addConverter(new OrderModel.OrderKey());
     }
 }
