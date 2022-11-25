@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-public class ApplicationTest extends SampleControllerTest {
+public class BardCrudSampleApplicationTest extends SampleControllerTest {
 
     @Test
     public void checkMetrics() throws Exception {

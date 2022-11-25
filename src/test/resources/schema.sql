@@ -1,11 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `bard-crud-sample` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-#
-USE `bard-crud-sample`;
-#
-CREATE USER IF NOT EXISTS 'bard-crud-sample'@'%' IDENTIFIED BY '1';
-GRANT Select, Insert, Update, Delete ON `bard-crud-sample`.* TO 'bard-crud-sample'@'%';
-#
-DROP TABLE IF EXISTS `tb_gender`;
 CREATE TABLE `tb_gender`
 (
     `id`    char(50)  NOT NULL,
@@ -14,8 +6,7 @@ CREATE TABLE `tb_gender`
     PRIMARY KEY (`id`),
     UNIQUE KEY `tb_gender_uk_title` (`title`)
 );
-#
-DROP TABLE IF EXISTS `tb_customer`;
+
 CREATE TABLE `tb_customer`
 (
     `id`          char(50)  NOT NULL,
@@ -29,8 +20,7 @@ CREATE TABLE `tb_customer`
     KEY `tb_customer_fk_gender` (`gender_id`),
     CONSTRAINT `tb_customer_fk_gender` FOREIGN KEY (`gender_id`) REFERENCES `tb_gender` (`id`)
 );
-#
-DROP TABLE IF EXISTS `tb_product`;
+
 CREATE TABLE `tb_product`
 (
     `id`    int          NOT NULL AUTO_INCREMENT,
@@ -38,8 +28,7 @@ CREATE TABLE `tb_product`
     `price` decimal(50, 2) DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
-#
-DROP TABLE IF EXISTS `tb_order`;
+
 CREATE TABLE `tb_order`
 (
     `customer_id` char(50) NOT NULL,

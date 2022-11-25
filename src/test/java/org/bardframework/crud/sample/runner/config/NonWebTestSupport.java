@@ -10,12 +10,12 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.web.bind.annotation.RestController;
 
 @ActiveProfiles({"dev", "test"})
-@SpringJUnitConfig(NonWebTestSupport.TestConfiguration.class)
+@SpringJUnitConfig(NonWebTestSupport.NonWebTestConfiguration.class)
 public interface NonWebTestSupport {
 
     @ComponentScan(basePackages = {"org.bardframework.crud.sample"}, excludeFilters = {@ComponentScan.Filter(value = {Configuration.class, RestController.class})})
-    @Import({AppConfiguration.class, ConfigsConfiguration.class, DataSourceAutoConfiguration.class})
-    class TestConfiguration {
+    @Import({AppConfiguration.class, ConfigsConfiguration.class, DataSourceAutoConfiguration.class, TestConfiguration.class})
+    class NonWebTestConfiguration {
 
     }
 }

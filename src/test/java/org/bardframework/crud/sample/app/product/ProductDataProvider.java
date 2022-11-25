@@ -18,7 +18,7 @@ public class ProductDataProvider extends SampleDataProviderService<ProductModel,
     public ProductDto getDto() {
         ProductDto dto = new ProductDto();
         dto.setName(RandomStringUtils.randomAlphabetic(1, 10));
-        dto.setPrice(RandomUtils.nextDouble());
+        dto.setPrice(RandomUtils.nextInt());
         return dto;
     }
 

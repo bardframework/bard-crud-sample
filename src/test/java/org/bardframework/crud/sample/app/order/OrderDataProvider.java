@@ -9,6 +9,8 @@ import org.bardframework.crud.sample.common.SampleUser;
 import org.bardframework.crud.sample.common.base.SampleDataProviderService;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class OrderDataProvider extends SampleDataProviderService<OrderModel, OrderCriteria, OrderDto, OrderService, OrderRepository, OrderModel.OrderKey> {
 
@@ -25,7 +27,7 @@ public class OrderDataProvider extends SampleDataProviderService<OrderModel, Ord
     public OrderDto getDto() {
         OrderDto dto = new OrderDto();
         dto.setCustomerId(customerDataProvider.getId(null));
-        dto.setProductId(productDataProvider.getId(null));
+        dto.setProductId(productDataProvider.saveNew(1, null).get(0).getId());
         dto.setCount(RandomUtils.nextInt());
         return dto;
     }
@@ -70,6 +72,6 @@ public class OrderDataProvider extends SampleDataProviderService<OrderModel, Ord
 
     @Override
     public boolean isDuplicate(OrderModel first, OrderModel second, SampleUser user) {
-        return false;
+        return Objects.equals(first.getId(), second.getId());
     }
 }

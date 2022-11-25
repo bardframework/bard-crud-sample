@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
@@ -29,16 +28,15 @@ import org.springframework.web.servlet.mvc.method.annotation.GenericRequestBodyR
         AppConfiguration.class,
         WebConfiguration.class,
         SecurityConfiguration.class,
-        SecurityAutoConfiguration.class,
         GenericRequestBodyResolverConfiguration.class,
         JacksonConfiguration.class,
         ConfigsConfiguration.class
 })
 @ComponentScan(basePackages = {"org.bardframework.crud.sample"}, excludeFilters = {@ComponentScan.Filter(value = {Configuration.class})})
-public class Application {
+public class BardCrudSampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(Application.class);
+        SpringApplication application = new SpringApplication(BardCrudSampleApplication.class);
         application.run(args);
     }
 

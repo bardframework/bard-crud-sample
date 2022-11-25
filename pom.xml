@@ -16,7 +16,7 @@
     <name>Bard CRUD Sample</name>
 
     <properties>
-        <start-class>org.bardframework.crud.sample.runner.Application</start-class>
+        <start-class>org.bardframework.crud.sample.runner.BardCrudSampleApplication</start-class>
         <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
         <dockerfile.tag>${project.version}</dockerfile.tag>
         <dockerfile.baseImage>eclipse-temurin:17-jre-alpine</dockerfile.baseImage>
@@ -121,6 +121,11 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
