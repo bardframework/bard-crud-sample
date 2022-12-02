@@ -36,8 +36,7 @@ import org.springframework.web.servlet.mvc.method.annotation.GenericRequestBodyR
 public class BardCrudSampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(BardCrudSampleApplication.class);
-        application.run(args);
+        SpringApplication.run(BardCrudSampleApplication.class, args);
     }
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "gender", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "api/gender", produces = APPLICATION_JSON_VALUE)
 public class GenderRestController extends SampleRestControllerAbstract<GenderService, String>
         implements ReadRestController<GenderModel, GenderCriteria, GenderService, String, SampleUser> {
 

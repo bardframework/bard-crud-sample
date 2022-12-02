@@ -199,6 +199,7 @@
                     <packageName>org.bardframework.crud.sample.common.entity</packageName>
                     <targetFolder>${project.basedir}/src/main/java/</targetFolder>
                     <sourceFolder/>
+                    <skip>true</skip>
                     <customTypes>
                         <customType>com.querydsl.sql.types.JSR310LocalDateTimeType</customType>
                         <customType>com.querydsl.sql.types.JSR310LocalDateType</customType>
