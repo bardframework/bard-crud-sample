@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "product", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(value = "api/product", produces = APPLICATION_JSON_VALUE)
 public class ProductRestController extends SampleRestControllerAbstract<ProductService, Integer> implements
         ReadRestController<ProductModel, ProductCriteria, ProductService, Integer, SampleUser>,
         WriteRestController<ProductModel, ProductDto, ProductService, Integer, SampleUser> {
