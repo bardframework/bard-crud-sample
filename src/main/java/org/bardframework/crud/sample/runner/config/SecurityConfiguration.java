@@ -11,7 +11,7 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.httpBasic().disable().formLogin().disable().logout().disable().csrf().disable();
         httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        httpSecurity.authorizeRequests().anyRequest().permitAll();
+        httpSecurity.authorizeHttpRequests().anyRequest().permitAll();
         return httpSecurity.build();
     }
 }
