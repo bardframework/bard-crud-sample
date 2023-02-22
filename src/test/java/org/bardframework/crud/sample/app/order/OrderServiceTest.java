@@ -9,7 +9,7 @@ class OrderServiceTest extends SampleServiceTest<OrderModel, OrderCriteria, Orde
 
     @AfterAll
     void deleteAll() {
-        LOGGER.info("deleting all order records");
+        log.info("deleting all order records");
         this.getService().getRepository().delete(new OrderCriteria(), null);
     }
 }

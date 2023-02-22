@@ -12,6 +12,6 @@ public class ExceptionControllerAdvice extends org.bardframework.commons.web.Exc
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     public void handle(IllegalArgumentException ex) {
-        LOGGER.error("illegal argument", ex);
+        log.error("illegal argument", ex);
     }
 }
