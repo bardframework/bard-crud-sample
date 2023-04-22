@@ -1,0 +1,56 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean name="CustomerPage" class="org.bardframework.table.TableTemplate"
+          p:name="customer"
+          p:pageable="true"
+          p:preload="true"
+          p:delete="true"
+          c:modelClass="org.bardframework.crud.sample.app.customer.CustomerModel"
+          c:messageSource-ref="messageSource">
+        <property name="saveFormTemplate">
+            <bean parent="customerSaveUpdateForm" c:name="save"/>
+        </property>
+        <property name="updateFormTemplate">
+            <bean parent="customerSaveUpdateForm" c:name="update"/>
+        </property>
+        <property name="filterFormTemplate">
+            <bean class="org.bardframework.form.FormTemplate" c:name="filter"
+                  c:messageSource-ref="messageSource"
+                  p:dtoClass="org.bardframework.crud.sample.app.customer.CustomerCriteria">
+                <constructor-arg name="fieldTemplates">
+                    <util:list>
+                        <bean class="org.bardframework.form.field.filter.TextFilterFieldTemplate"
+                              c:name="searchFilter"/>
+                    </util:list>
+                </constructor-arg>
+            </bean>
+        </property>
+        <constructor-arg name="headerTemplates">
+            <util:list>
+                <bean class="org.bardframework.table.header.StringHeaderTemplate"
+                      p:name="email"/>
+                <bean class="org.bardframework.table.header.StringHeaderTemplate"
+                      p:name="firstName"/>
+                <bean class="org.bardframework.table.header.StringHeaderTemplate"
+                      p:name="lastName" p:hidden="true"/>
+            </util:list>
+        </constructor-arg>
+    </bean>
+
+    <bean name="customerSaveUpdateForm" class="org.bardframework.form.FormTemplate" c:name=""
+          c:messageSource-ref="messageSource"
+          p:dtoClass="org.bardframework.crud.sample.app.customer.CustomerDto">
+        <constructor-arg name="fieldTemplates">
+            <util:list>
+                <bean class="org.bardframework.form.field.input.TextFieldTemplate" c:name="email"/>
+                <bean class="org.bardframework.form.field.input.TextFieldTemplate" c:name="firstName"/>
+                <bean class="org.bardframework.form.field.input.TextFieldTemplate" c:name="lastName"/>
+                <bean class="org.bardframework.form.field.input.TextAreaFieldTemplate" c:name="description"/>
+            </util:list>
+        </constructor-arg>
+    </bean>
+</beans>

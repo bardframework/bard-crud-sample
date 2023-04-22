@@ -29,7 +29,7 @@ public class GenderRepositoryQdslSqlImpl extends ReadRepositoryQdslSqlAbstract<G
     @Override
     protected Predicate getPredicate(GenderCriteria criteria, SampleUser user) {
         BooleanBuilder builder = new BooleanBuilder();
-        builder.and(QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbGender.title));
+        builder.and(QueryDslUtils.getPredicate(criteria.getSearchFilter(), tbGender.title));
         return builder;
     }
 

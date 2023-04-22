@@ -34,7 +34,7 @@ public class CustomerRepositoryQdslSqlImpl extends SampleRepositoryQdslSqlAbstra
     @Override
     protected Predicate getPredicate(CustomerCriteria criteria, SampleUser user) {
         BooleanBuilder builder = new BooleanBuilder();
-        builder.orAllOf(QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbCustomer.firstName), QueryDslUtils.getPredicate(criteria.getSearchQuery(), tbCustomer.lastName));
+        builder.orAllOf(QueryDslUtils.getPredicate(criteria.getSearchFilter(), tbCustomer.firstName), QueryDslUtils.getPredicate(criteria.getSearchFilter(), tbCustomer.lastName));
         return builder;
     }
 

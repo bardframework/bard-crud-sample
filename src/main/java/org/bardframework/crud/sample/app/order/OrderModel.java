@@ -1,5 +1,6 @@
 package org.bardframework.crud.sample.app.order;
 
+import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -8,45 +9,20 @@ import org.springframework.core.convert.converter.Converter;
 
 import java.io.Serializable;
 
+@Getter
+@Setter
+@ToString
 public class OrderModel extends BaseModelAbstract<OrderModel.OrderKey> {
 
     private Integer count;
 
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class OrderKey implements Converter<String, OrderKey>, Serializable {
         private String customerId;
         private Integer productId;
-
-        public OrderKey() {
-        }
-
-        public OrderKey(String customerId, Integer productId) {
-            this.customerId = customerId;
-            this.productId = productId;
-        }
-
-        public String getCustomerId() {
-            return customerId;
-        }
-
-        public void setCustomerId(String customerId) {
-            this.customerId = customerId;
-        }
-
-        public Integer getProductId() {
-            return productId;
-        }
-
-        public void setProductId(Integer productId) {
-            this.productId = productId;
-        }
 
         @Override
         public boolean equals(Object other) {

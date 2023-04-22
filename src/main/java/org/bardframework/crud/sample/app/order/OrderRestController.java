@@ -11,8 +11,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping(value = "api/order", produces = APPLICATION_JSON_VALUE)
-public class OrderRestController extends
-        SampleRestControllerAbstract<OrderService, OrderModel.OrderKey> implements
+public class OrderRestController extends SampleRestControllerAbstract<OrderService, OrderModel.OrderKey> implements
         ReadRestController<OrderModel, OrderCriteria, OrderService, OrderModel.OrderKey, SampleUser>,
         WriteRestController<OrderModel, OrderDto, OrderService, OrderModel.OrderKey, SampleUser> {
 

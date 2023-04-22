@@ -28,6 +28,10 @@
             <artifactId>bard-validator</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.bardframework.crud</groupId>
+            <artifactId>crud-table</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.bardframework.commons</groupId>
             <artifactId>common-spring-boot</artifactId>
         </dependency>
@@ -50,6 +54,11 @@
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-querydsl-sql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.querydsl</groupId>
@@ -122,6 +131,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.bardframework.crud</groupId>
+            <artifactId>crud-table</artifactId>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>test</scope>
@@ -162,6 +176,18 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*Page.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

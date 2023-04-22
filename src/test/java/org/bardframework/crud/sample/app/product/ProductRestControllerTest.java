@@ -1,7 +1,6 @@
 package org.bardframework.crud.sample.app.product;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import org.bardframework.crud.api.base.PagedData;
+import com.fasterxml.jackson.databind.JavaType;
 import org.bardframework.crud.api.base.ReadRestControllerTest;
 import org.bardframework.crud.api.base.WriteRestControllerTest;
 import org.bardframework.crud.sample.common.SampleUser;
@@ -12,14 +11,12 @@ class ProductRestControllerTest extends SampleRestControllerTest<ProductRestCont
         WriteRestControllerTest<ProductModel, ProductDto, ProductDataProvider, Integer, SampleUser> {
 
     @Override
-    public TypeReference<ProductModel> getModelTypeReference() {
-        return new TypeReference<ProductModel>() {
-        };
+    public Class<ProductModel> getModelClass() {
+        return ProductModel.class;
     }
 
     @Override
-    public TypeReference<? extends PagedData<ProductModel>> getDataModelTypeReference() {
-        return new TypeReference<PagedData<ProductModel>>() {
-        };
+    public JavaType getModelJavaType() {
+        return ReadRestControllerTest.super.getModelJavaType();
     }
 }
