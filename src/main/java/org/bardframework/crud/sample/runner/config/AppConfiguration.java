@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 @EnableTransactionManagement
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@ImportResource({"classpath*:spring-configuration/**/**.xml", "classpath*:**/**Page.xml"})
+@ImportResource({"classpath*:*-configuration/**/**.xml", "classpath*:**/**Page.xml"})
 public class AppConfiguration {
 
     @Bean
