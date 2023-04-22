@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
-import java.io.Serializable;
-
-public abstract class SampleRestControllerAbstract<S extends ReadService<?, ?, ?, I, SampleUser>, I extends Serializable> extends SampleControllerAbstract {
+public abstract class SampleRestControllerAbstract<S extends ReadService<?, ?, ?, I, SampleUser>, I> extends SampleControllerAbstract {
     protected final S service;
 
     @Autowired

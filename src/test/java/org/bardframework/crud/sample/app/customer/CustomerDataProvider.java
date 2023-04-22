@@ -3,11 +3,11 @@ package org.bardframework.crud.sample.app.customer;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.assertj.core.api.Assertions;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.crud.sample.common.base.SampleDataProviderService;
+import org.bardframework.crud.sample.common.base.SampleDataProvider;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerDataProvider extends SampleDataProviderService<CustomerModel, CustomerCriteria, CustomerDto, CustomerService, CustomerRepository, String> {
+public class CustomerDataProvider extends SampleDataProvider<CustomerModel, CustomerCriteria, CustomerDto, CustomerService, CustomerRepository, String> {
 
     public CustomerDataProvider(CustomerService service) {
         super(service);

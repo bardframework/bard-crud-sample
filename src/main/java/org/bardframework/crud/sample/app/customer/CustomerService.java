@@ -22,10 +22,10 @@ public class CustomerService extends SampleServiceAbstract<CustomerModel, Custom
     }
 
     @Override
-    protected void onUpdate(CustomerDto dto, CustomerModel model, SampleUser user) {
-        model.setEmail(dto.getEmail());
-        model.setFirstName(dto.getFirstName());
-        model.setLastName(dto.getLastName());
-        model.setDescription(dto.getDescription());
+    protected void onUpdate(CustomerDto dto, CustomerModel entity, SampleUser user) {
+        entity.setEmail(dto.getEmail());
+        entity.setFirstName(dto.getFirstName());
+        entity.setLastName(dto.getLastName());
+        entity.setDescription(dto.getDescription());
     }
 }

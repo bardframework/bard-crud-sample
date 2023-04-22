@@ -1,25 +1,23 @@
 package org.bardframework.crud.sample.common.base;
 
-import org.bardframework.crud.api.base.DataProviderService;
+import org.bardframework.crud.api.base.ServiceDataProvider;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.Serializable;
-
-public abstract class SampleRestControllerTest<CL, P extends DataProviderService<?, ?, ?, ?, ?, I, ?>, I extends Serializable> extends SampleControllerTest {
+public abstract class SampleRestControllerTest<L, P extends ServiceDataProvider<?, ?, ?, ?, ?, I, ?>, I> extends SampleControllerTest {
 
     @Autowired
     private P dataProvider;
     @Autowired
-    private CL controller;
+    private L controller;
 
     public P getDataProvider() {
         return dataProvider;
     }
 
-    public CL getController() {
+    public L getController() {
         return controller;
     }
 

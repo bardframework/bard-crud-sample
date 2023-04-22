@@ -12,18 +12,14 @@ import java.util.Arrays;
 import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 
-
-
 /**
  * QTbCustomer is a Querydsl query type for QTbCustomer
  */
 @Generated("com.querydsl.sql.codegen.MetaDataSerializer")
 public class QTbCustomer extends com.querydsl.sql.RelationalPathBase<QTbCustomer> {
 
-    private static final long serialVersionUID = -2029191274;
-
     public static final QTbCustomer tbCustomer = new QTbCustomer("tb_customer");
-
+    private static final long serialVersionUID = -2029191274;
     public final StringPath description = createString("description");
 
     public final StringPath email = createString("email");

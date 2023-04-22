@@ -5,15 +5,14 @@ import org.bardframework.commons.utils.ReflectionUtils;
 import org.bardframework.crud.api.base.*;
 import org.bardframework.crud.sample.common.SampleUser;
 
-import java.io.Serializable;
 import java.util.UUID;
 
-public abstract class SampleDataProviderService<M extends BaseModel<I>, C extends BaseCriteria<I>, D, S extends BaseService<M, C, D, R, I, SampleUser>, R extends BaseRepository<M, C, I, SampleUser>, I extends Serializable> implements DataProviderService<M, C, D, S, R, I, SampleUser> {
+public abstract class SampleDataProvider<M extends BaseModel<I>, C extends BaseCriteria<I>, D, S extends BaseService<M, C, D, R, I, SampleUser>, R extends BaseRepository<M, C, I, SampleUser>, I> implements ServiceDataProvider<M, C, D, S, R, I, SampleUser> {
 
     private final S service;
     private final Class<C> criteriaClazz;
 
-    protected SampleDataProviderService(S service) {
+    protected SampleDataProvider(S service) {
         this.service = service;
         this.criteriaClazz = ReflectionUtils.getGenericArgType(this.getClass(), 1);
     }

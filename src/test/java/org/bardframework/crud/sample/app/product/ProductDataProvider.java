@@ -4,11 +4,11 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.assertj.core.api.Assertions;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.crud.sample.common.base.SampleDataProviderService;
+import org.bardframework.crud.sample.common.base.SampleDataProvider;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductDataProvider extends SampleDataProviderService<ProductModel, ProductCriteria, ProductDto, ProductService, ProductRepository, Integer> {
+public class ProductDataProvider extends SampleDataProvider<ProductModel, ProductCriteria, ProductDto, ProductService, ProductRepository, Integer> {
 
     protected ProductDataProvider(ProductService service) {
         super(service);

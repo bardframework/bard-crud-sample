@@ -6,13 +6,13 @@ import org.assertj.core.api.Assertions;
 import org.bardframework.crud.sample.app.customer.CustomerDataProvider;
 import org.bardframework.crud.sample.app.product.ProductDataProvider;
 import org.bardframework.crud.sample.common.SampleUser;
-import org.bardframework.crud.sample.common.base.SampleDataProviderService;
+import org.bardframework.crud.sample.common.base.SampleDataProvider;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
 @Service
-public class OrderDataProvider extends SampleDataProviderService<OrderModel, OrderCriteria, OrderDto, OrderService, OrderRepository, OrderModel.OrderKey> {
+public class OrderDataProvider extends SampleDataProvider<OrderModel, OrderCriteria, OrderDto, OrderService, OrderRepository, OrderModel.OrderKey> {
 
     private final CustomerDataProvider customerDataProvider;
     private final ProductDataProvider productDataProvider;

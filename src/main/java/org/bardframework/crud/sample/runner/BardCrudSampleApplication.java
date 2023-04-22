@@ -1,10 +1,7 @@
 package org.bardframework.crud.sample.runner;
 
 import org.bardframework.commons.spring.boot.ConfigsConfiguration;
-import org.bardframework.crud.sample.runner.config.AppConfiguration;
-import org.bardframework.crud.sample.runner.config.JacksonConfiguration;
-import org.bardframework.crud.sample.runner.config.SecurityConfiguration;
-import org.bardframework.crud.sample.runner.config.WebConfiguration;
+import org.bardframework.crud.sample.runner.config.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
@@ -28,6 +25,7 @@ import org.springframework.web.servlet.mvc.method.annotation.GenericRequestBodyR
         AppConfiguration.class,
         WebConfiguration.class,
         SecurityConfiguration.class,
+        QueryDslConfiguration.class,
         GenericRequestBodyResolverConfiguration.class,
         JacksonConfiguration.class,
         ConfigsConfiguration.class

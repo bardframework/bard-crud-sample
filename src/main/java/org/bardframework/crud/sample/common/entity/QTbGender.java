@@ -13,18 +13,14 @@ import java.util.Arrays;
 import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 
-
-
 /**
  * QTbGender is a Querydsl query type for QTbGender
  */
 @Generated("com.querydsl.sql.codegen.MetaDataSerializer")
 public class QTbGender extends com.querydsl.sql.RelationalPathBase<QTbGender> {
 
-    private static final long serialVersionUID = 1715339385;
-
     public static final QTbGender tbGender = new QTbGender("tb_gender");
-
+    private static final long serialVersionUID = 1715339385;
     public final StringPath id = createString("id");
 
     public final NumberPath<Integer> order = createNumber("order", Integer.class);
