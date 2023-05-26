@@ -37,6 +37,7 @@ public class OrderRepositoryQdslSqlImpl extends BaseRepositoryQdslSqlAbstract<Or
     protected Predicate getPredicate(IdFilter<OrderModel.OrderKey> idFilter, SampleUser user) {
         return QueryDslUtils.getPredicate(idFilter,
                 orderKey -> tbOrder.productId.eq(orderKey.getProductId()).and(tbOrder.customerId.eq(orderKey.getCustomerId())),
+                orderKey -> tbOrder.productId.ne(orderKey.getProductId()).or(tbOrder.customerId.ne(orderKey.getCustomerId())),
                 () -> tbOrder.productId.isNotNull().and(tbOrder.customerId.isNotNull()),
                 () -> tbOrder.productId.isNull().and(tbOrder.customerId.isNull())
         );
