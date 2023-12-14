@@ -1,4 +1,4 @@
-package org.bardframework.crud.sample.runner;
+package org.bardframework.crud.sample.runner.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.bardframework.commons.web.BaseExceptionControllerAdvice;
