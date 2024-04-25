@@ -1,6 +1,9 @@
 package org.bardframework.crud.sample.runner;
 
+import org.bardframework.commons.monitoring.MonitoringConfiguration;
 import org.bardframework.commons.spring.boot.ConfigsConfiguration;
+import org.bardframework.commons.spring.boot.CorsConfiguration;
+import org.bardframework.commons.swagger.SwaggerConfiguration;
 import org.bardframework.crud.sample.runner.config.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,7 +31,10 @@ import org.springframework.web.servlet.mvc.method.annotation.GenericRequestBodyR
         QueryDslConfiguration.class,
         GenericRequestBodyResolverConfiguration.class,
         JacksonConfiguration.class,
-        ConfigsConfiguration.class
+        ConfigsConfiguration.class,
+        MonitoringConfiguration.class,
+        SwaggerConfiguration.class,
+        CorsConfiguration.class,
 })
 @ComponentScan(basePackages = {"org.bardframework.crud.sample"}, excludeFilters = {@ComponentScan.Filter(value = {Configuration.class})})
 public class BardCrudSampleApplication {
