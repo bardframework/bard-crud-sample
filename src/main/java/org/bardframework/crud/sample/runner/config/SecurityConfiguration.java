@@ -10,13 +10,13 @@ public class SecurityConfiguration {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.httpBasic(AbstractHttpConfigurer::disable);
-        httpSecurity.formLogin(AbstractHttpConfigurer::disable);
-        httpSecurity.logout(AbstractHttpConfigurer::disable);
-        httpSecurity.csrf(AbstractHttpConfigurer::disable);
-        httpSecurity.sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        httpSecurity.securityMatchers(configurer -> configurer.requestMatchers("/api/**"));
-        httpSecurity.authorizeHttpRequests(registry -> registry.anyRequest().permitAll());
-        return httpSecurity.build();
+        return httpSecurity.httpBasic(AbstractHttpConfigurer::disable)
+                .formLogin(AbstractHttpConfigurer::disable)
+                .logout(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
+                .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .securityMatchers(configurer -> configurer.requestMatchers("/api/**"))
+                .authorizeHttpRequests(registry -> registry.anyRequest().permitAll())
+                .build();
     }
 }
