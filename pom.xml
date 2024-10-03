@@ -17,7 +17,7 @@
 
     <properties>
         <start-class>org.bardframework.crud.sample.runner.BardCrudSampleApplication</start-class>
-        <dockerfile.repository>docker.hampasoft.ir/hampasoft/${project.artifactId}</dockerfile.repository>
+        <dockerfile.repository>docker.bardintech.ir/samples/${project.artifactId}</dockerfile.repository>
         <dockerfile.tag>${project.version}</dockerfile.tag>
         <dockerfile.baseImage>eclipse-temurin:17-jre-alpine</dockerfile.baseImage>
     </properties>
