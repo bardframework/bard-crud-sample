@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.bardframework</groupId>
         <artifactId>bard-bom</artifactId>
-        <version>4.1.20</version>
+        <version>4.5.10</version>
         <relativePath/>
     </parent>
 
@@ -17,7 +17,7 @@
 
     <properties>
         <start-class>org.bardframework.crud.sample.runner.BardCrudSampleApplication</start-class>
-        <dockerfile.repository>docker.bardintech.ir/samples/${project.artifactId}</dockerfile.repository>
+        <dockerfile.repository>docker.bardin.tech/samples/${project.artifactId}</dockerfile.repository>
         <dockerfile.tag>${project.version}</dockerfile.tag>
         <dockerfile.baseImage>eclipse-temurin:21-jre-alpine</dockerfile.baseImage>
     </properties>
