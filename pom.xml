@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.bardframework</groupId>
         <artifactId>bard-bom</artifactId>
-        <version>4.5.10</version>
+        <version>4.7.10</version>
         <relativePath/>
     </parent>
 
@@ -17,9 +17,6 @@
 
     <properties>
         <start-class>org.bardframework.crud.sample.runner.BardCrudSampleApplication</start-class>
-        <dockerfile.repository>docker.bardin.tech/samples/${project.artifactId}</dockerfile.repository>
-        <dockerfile.tag>${project.version}</dockerfile.tag>
-        <dockerfile.baseImage>eclipse-temurin:21-jre-alpine</dockerfile.baseImage>
     </properties>
 
     <dependencies>
@@ -52,41 +49,8 @@
             <artifactId>crud-querydsl-sql</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign.querydsl</groupId>
-            <artifactId>querydsl-sql-spring</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjtools</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -101,19 +65,71 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.querydsl</groupId>
+            <artifactId>querydsl-sql-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.bardframework.crud</groupId>
             <artifactId>crud-table</artifactId>
+            <scope>test</scope>
             <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.bardframework.commons</groupId>
+            <artifactId>common-web</artifactId>
+            <scope>test</scope>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.bardframework.crud</groupId>
+            <artifactId>crud-api</artifactId>
+            <scope>test</scope>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-webmvc-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -129,23 +145,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bardframework.crud</groupId>
-            <artifactId>crud-api</artifactId>
-            <scope>test</scope>
-            <type>test-jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.bardframework.commons</groupId>
-            <artifactId>common-web</artifactId>
-            <scope>test</scope>
-            <type>test-jar</type>
         </dependency>
     </dependencies>
 
@@ -201,9 +200,9 @@
                     <sourceFolder/>
                     <skip>true</skip>
                     <customTypes>
-                        <customType>com.querydsl.sql.types.JSR310LocalDateTimeType</customType>
-                        <customType>com.querydsl.sql.types.JSR310LocalDateType</customType>
-                        <customType>com.querydsl.sql.types.JSR310LocalTimeType</customType>
+                        <customType>com.querydsl.sql.types.LocalDateTimeType</customType>
+                        <customType>com.querydsl.sql.types.LocalDateType</customType>
+                        <customType>com.querydsl.sql.types.LocalTimeType</customType>
                     </customTypes>
                     <typeMappings/>
                 </configuration>
@@ -227,10 +226,6 @@
                         <phase>verify</phase>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>

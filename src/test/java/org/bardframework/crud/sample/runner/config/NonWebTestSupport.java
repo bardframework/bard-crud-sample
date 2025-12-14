@@ -1,7 +1,7 @@
 package org.bardframework.crud.sample.runner.config;
 
 import org.bardframework.commons.spring.boot.ConfigsConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
